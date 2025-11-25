@@ -1,25 +1,50 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import java.time.Duration;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 public class JoinWaitlistPage {
-    private WebDriver driver;
 
-    private By nameField = By.xpath("//input[@placeholder='Enter your full name']");
-    private By emailField = By.xpath("//input[@placeholder='Enter your email']");
-    private By phoneField = By.xpath("//input[@placeholder='Enter your phone number']");
-    private By submitBtn = By.xpath("//button[contains(text(),'Submit')]");
+    WebDriver driver;
+    WebDriverWait wait;
 
     public JoinWaitlistPage(WebDriver driver) {
         this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
-    public void fillJoinWaitlistForm(String name, String email, String phone) {
-        driver.findElement(nameField).sendKeys(name);
-        driver.findElement(emailField).sendKeys(email);
-        driver.findElement(phoneField).sendKeys(phone);
-        driver.findElement(submitBtn).click();
+    By joinBtn = By.xpath("//button[normalize-space()='Join the Waitlist']");
+    By fullName = By.xpath("//input[@placeholder='Enter your full name']");
+    By email = By.id("email");
+    By phone = By.xpath("//input[@placeholder='Enter your phone number']");
+    By submit = By.xpath("//button[normalize-space()='Join Waitlist']");
+
+    public void clickJoin() {
+        wait.until(ExpectedConditions.elementToBeClickable(joinBtn)).click();
+        
+    }
+    public void slow() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+  public void enterDetails(String name, String mail, String number) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(fullName)).sendKeys(name);
+        slow();
+        driver.findElement(email).sendKeys(mail);
+        slow();
+        
+        slow();
+        driver.findElement(phone).sendKeys(number);
+        slow();
+    }
+
+    public void clickSubmit() {
+        wait.until(ExpectedConditions.elementToBeClickable(submit)).click();
     }
 }
 

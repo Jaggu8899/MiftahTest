@@ -8,13 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import java.time.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Partner {
+	
+	
     public static void main(String[] args) throws Exception {
-        WebDriverManager.chromedriver().setup();
+       WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -34,10 +37,11 @@ public class Partner {
        WebElement dropdown = driver.findElement(By.xpath("//select[option[normalize-space()='Select partnership type']]"));
        Select select = new Select(dropdown);
        select.selectByVisibleText("Technology Partner");
-       driver.findElement(By.xpath("//input[@placeholder='Enter your full name']")).sendKeys("Jagadeesh");
+       driver.findElement(By.xpath("//input[@placeholder='Enter your full name']")).sendKeys("jagadeesh");
        Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@placeholder='Enter your email address']")).sendKeys("jagadeeswara89@gmail.com");
        Thread.sleep(1000);
+       
        driver.findElement(By.xpath("//input[@placeholder='Enter your phone number']")).sendKeys("7095297275");
        Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@placeholder='Enter your job title']")).sendKeys("Automation Engineer");
@@ -46,38 +50,26 @@ public class Partner {
        Thread.sleep(1000);
        Select industry = new Select(driver.findElement(By.xpath("//select[option[normalize-space()='Select your industry']]")));
        industry.selectByVisibleText("Technology");
-       Thread.sleep(10000); 
+       Thread.sleep(1000);
+       WebElement referralDropdown = driver.findElement(By.xpath("//label[contains(text(),'How did you hear about us?')]/following::select[1]"));
+       Select referralSelect = new Select(referralDropdown);
+       referralSelect.selectByVisibleText("LinkedIn");
+       Thread.sleep(5000);
+       WebElement captchaInput = driver.findElement(By.xpath("//input[@placeholder='Enter captcha']"));
+       captchaInput.sendKeys("text");
+       Thread.sleep(15000);
+       driver.findElement(By.xpath("//input[@id='accept-terms']")).click();
+       Thread.sleep(5000);
        WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(
-    		    By.xpath("//button[normalize-space()='Submit']")
-    		));
+               By.xpath("//button[@type='submit' and contains(.,'Submit')]")
+           ));
 
-    		
-    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitBtn);
-    		Thread.sleep(1000);
+           submitBtn.click();
 
-    		
-    		try {
-    		    submitBtn.click();
-    		    System.out.println("✅ Normal click worked!");
-    		} catch (Exception e) {
-    		    System.out.println("⚠️ Normal click failed, using JavaScript click...");
-    		    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitBtn);
-    		}
-
-    		Thread.sleep(4000);
-    		System.out.println("✅ Form submitted successfully (check backend response).");
+           Thread.sleep(2000);
+           driver.quit();
        
-       
-
-
-       
-
-
-       
-
-
-        
-    }
+  }
 }
 
 

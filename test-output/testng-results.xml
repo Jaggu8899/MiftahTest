@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-19T12:04:20 IST" name="Suite" finished-at="2025-11-19T12:05:23 IST" duration-ms="62770">
+    <groups>
+    </groups>
+    <test started-at="2025-11-19T12:04:20 IST" name="Test" finished-at="2025-11-19T12:05:23 IST" duration-ms="62770">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@367ffa75]" started-at="2025-11-19T12:04:53 IST" name="setUp" finished-at="2025-11-19T12:04:54 IST" duration-ms="1002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginToMiftah()[pri:0, instance:tests.LoginTest@367ffa75]" started-at="2025-11-19T12:04:54 IST" name="loginToMiftah" finished-at="2025-11-19T12:05:00 IST" duration-ms="6188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToMiftah -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@367ffa75]" started-at="2025-11-19T12:05:00 IST" name="tearDown" finished-at="2025-11-19T12:05:00 IST" duration-ms="123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.PartnerTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.PartnerTest@49438269]" started-at="2025-11-19T12:05:00 IST" name="setUp" finished-at="2025-11-19T12:05:01 IST" duration-ms="889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="partnerFormTest()[pri:0, instance:tests.PartnerTest@49438269]" started-at="2025-11-19T12:05:01 IST" name="partnerFormTest" finished-at="2025-11-19T12:05:23 IST" duration-ms="21726" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f73db41d1b37ad401a979ccc4abbbb02, findElement {using=xpath, value=//label[contains(text(),'How did you hear about us?')]/following::select[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\NS\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52092}, goog:processID: 30328, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52092/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f73db41d1b37ad401a979ccc4abbbb02]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=142.0.7444.163)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f73db41d1b37ad401a979ccc4abbbb02, findElement {using=xpath, value=//label[contains(text(),'How did you hear about us?')]/following::select[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\NS\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52092}, goog:processID: 30328, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52092/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f73db41d1b37ad401a979ccc4abbbb02
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at pages.PartnerPage.fillForm(PartnerPage.java:63)
+at tests.PartnerTest.partnerFormTest(PartnerTest.java:13)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- partnerFormTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PartnerTest@49438269]" started-at="2025-11-19T12:05:23 IST" name="tearDown" finished-at="2025-11-19T12:05:23 IST" duration-ms="40" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.PartnerTest -->
+      <class name="tests.signupTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.signupTest@2cd76f31]" started-at="2025-11-19T12:04:36 IST" name="setUp" finished-at="2025-11-19T12:04:37 IST" duration-ms="883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="signuplistForm()[pri:0, instance:tests.signupTest@2cd76f31]" started-at="2025-11-19T12:04:37 IST" name="signuplistForm" finished-at="2025-11-19T12:04:53 IST" duration-ms="15414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signuplistForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.signupTest@2cd76f31]" started-at="2025-11-19T12:04:53 IST" name="tearDown" finished-at="2025-11-19T12:04:53 IST" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.signupTest -->
+      <class name="tests.WaitlistTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.WaitlistTest@38425407]" started-at="2025-11-19T12:04:20 IST" name="setUp" finished-at="2025-11-19T12:04:22 IST" duration-ms="1957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="joinWaitlistForm()[pri:0, instance:tests.WaitlistTest@38425407]" started-at="2025-11-19T12:04:22 IST" name="joinWaitlistForm" finished-at="2025-11-19T12:04:36 IST" duration-ms="14349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- joinWaitlistForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.WaitlistTest@38425407]" started-at="2025-11-19T12:04:36 IST" name="tearDown" finished-at="2025-11-19T12:04:36 IST" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.WaitlistTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

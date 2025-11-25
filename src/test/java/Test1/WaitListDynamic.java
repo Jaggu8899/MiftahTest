@@ -14,7 +14,6 @@ public class WaitListDynamic {
             {"kishore", "kishore123@gmail.com", "9876543210"},
             {"Suresh", "suresh456@gmail.com", "9123456789"}
         };
-
         for (String[] user : users) {
             String name = user[0];
             String email = user[1];
@@ -23,10 +22,8 @@ public class WaitListDynamic {
             WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
-
             driver.get("https://dev.miftah.ai/");
             Thread.sleep(5000);
-
             driver.findElement(By.xpath("//button[normalize-space()='Join the Waitlist']")).click();
             Thread.sleep(4000);
 
@@ -37,9 +34,7 @@ public class WaitListDynamic {
             driver.findElement(By.xpath("//input[@placeholder='Enter your phone number']")).sendKeys(phone);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//button[normalize-space()='Join Waitlist']")).click();
-
             System.out.println("✅ Submitted for: " + name + " | " + email + " | " + phone);
-
             Thread.sleep(5000);
             driver.quit();
         }
