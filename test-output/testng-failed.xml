@@ -3,20 +3,6 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.PartnerTest">
-        <methods>
-          <include name="partnerFormTest"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- tests.PartnerTest -->
-      <class name="tests.WaitlistTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="joinWaitlistForm"/>
-        </methods>
-      </class> <!-- tests.WaitlistTest -->
       <class name="tests.LoginTest">
         <methods>
           <include name="setUp"/>

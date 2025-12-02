@@ -19,7 +19,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.get("https://dev.miftah.ai/");
+        driver.get("https://dev.miftah.ai/landing/");
     }
 
     @AfterMethod

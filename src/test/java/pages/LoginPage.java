@@ -25,7 +25,7 @@ public class LoginPage {
     By loginBtn = By.xpath("//button[.//span[normalize-space()='Login']]");
     By email = By.id("email");
     By password = By.id("password");
-    By signIn = By.xpath("//button[normalize-space()='Sign In']");
+    By login = By.xpath("//button[text()='Login']']");
 
     public void login(String mail, String pass) {
         wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
@@ -34,7 +34,7 @@ public class LoginPage {
         slow();
         wait.until(ExpectedConditions.visibilityOfElementLocated(password)).sendKeys(pass);
         slow();
-        wait.until(ExpectedConditions.elementToBeClickable(signIn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(login)).click();
         slow();
     }
 }
