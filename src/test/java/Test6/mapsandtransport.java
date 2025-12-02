@@ -7,19 +7,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class mapsandcar {
+public class mapsandtransport {
 
 	public static void main(String[] args) throws Exception {
 	
-		 WebDriverManager.chromedriver().setup();
+		   WebDriverManager.chromedriver().setup();
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://dev.miftah.ai/");
 	       driver.manage().window().maximize();
-	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Login']]")).click();
+	       
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 	       driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
-	       driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
+	       driver.findElement(By.xpath("//button[text()='Login']")).click();
 	       Thread.sleep(3000);
 	       driver.findElement( By.xpath("//button[.//span[text()='Itinerary']]")).click();
 		   Thread.sleep(3000);
@@ -33,14 +33,11 @@ public class mapsandcar {
 		           element.click();
 		           Thread.sleep(5000);
 		   
-		   WebElement resortName = driver.findElement(
-				    By.xpath("//h3[normalize-space()='Anantara Mina Al Arab Resort']"));
-				
-		   resortName.click();
-		   
-		
-		  
+		    driver.findElement(By.xpath("//h3[text()='The Ritz-Carlton Ras Al Khaimah, Al Hamra Beach']")).click();
 
+		    Thread.sleep(5000);
+		   
+		    driver.quit();
 		
 		
 		

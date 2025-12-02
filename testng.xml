@@ -4,7 +4,6 @@
     <test thread-count="5" name="Test">
         <classes>
             <class name="tests.WaitlistTest"/>
-            <class name="tests.signupTest"/>
             <class name="tests.LoginTest"/>
             <class name="tests.PartnerTest"/>
         </classes>

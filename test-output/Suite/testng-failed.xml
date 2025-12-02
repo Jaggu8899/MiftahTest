@@ -10,6 +10,20 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- tests.PartnerTest -->
+      <class name="tests.WaitlistTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="joinWaitlistForm"/>
+        </methods>
+      </class> <!-- tests.WaitlistTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loginToMiftah"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

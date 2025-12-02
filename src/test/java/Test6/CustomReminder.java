@@ -16,45 +16,41 @@ public class CustomReminder {
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://dev.miftah.ai/");
 	       driver.manage().window().maximize();
-	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Login']]")).click();
-	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
+	       driver.findElement(By.xpath("//button[text()='Login']")).click();
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Calendar']]")).click();
-	       Thread.sleep(3000);
+	       driver.findElement(By.xpath("//button[.//span[text()='Calendar']]")).click();
+           Thread.sleep(3000);
 	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Add Event']]")).click();
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//input[@placeholder='e.g., Dinner at Nobu']")).sendKeys("night clubs");
+	       driver.findElement(By.xpath("//input[@placeholder='e.g., Dinner at Nobu']")).sendKeys("Night Clubs");
 	       Thread.sleep(3000);
 	    // Start Date
 	       WebElement start = driver.findElement(By.xpath("//label[contains(text(),'Start Date')]/following::input[1]"));
 	       start.click();
 	       start.clear();
-	       start.sendKeys("29-11-2025");
+	       start.sendKeys("6-12-2025");
 
 	       // End Date
 	       WebElement end = driver.findElement(By.xpath("//label[contains(text(),'End Date')]/following::input[1]"));
 	       end.click();
 	       end.clear();
-	       end.sendKeys("29-11-2025");
-	       Thread.sleep(3000);
+	       end.sendKeys("6-12-2025");
+	       Thread.sleep(5000);
 	    // Event Time
-	       WebElement eventTime = driver.findElement(By.xpath("//label[contains(text(),'Event Time')]/following::input[1]"));
-	       eventTime.click();
-	       eventTime.clear();
-	       eventTime.sendKeys("11:30");
+	       WebElement time = driver.findElement(By.xpath("//input[@type='time']"));
+	       time.sendKeys("10:30");
+
 
 	       // End Time
-	       WebElement endTime = driver.findElement(By.xpath("//label[contains(text(),'End Time')]/following::input[1]"));
-	       endTime.click();
-	       endTime.clear();
-	       endTime.sendKeys("12:30");
-	       Thread.sleep(3000);
+	       WebElement endTime = driver.findElement(
+	    		    By.xpath("//label[text()='End Time']/following::input[@type='time'][1]")
+	    		);
+	    		endTime.sendKeys("12:30");
+
            
 	       WebElement dropdown = driver.findElement(By.xpath("//label[contains(text(),'Event Type')]/following::select[1]"));
 	       Select type = new Select(dropdown);
@@ -69,32 +65,20 @@ public class CustomReminder {
 
 	       driver.findElement(By.xpath("//button[contains(text(),'Use this location')]")).click();
 	       Thread.sleep(2000);
-	       driver.findElement(By.xpath("//span[text()='Add notification']")).click();
+	       WebElement addBtn = driver.findElement(By.xpath("//span[text()='Add notification']"));
+	       addBtn.click();
 	       
-	       WebElement numberInput = driver.findElement(
-	    		    By.xpath("(//input[@type='number'])[last()]")
-	    		);
-
-	    		numberInput.click();
-	    		numberInput.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-	    		numberInput.sendKeys(Keys.DELETE);
-	    		numberInput.sendKeys("5");
-	    		
-	    		 Thread.sleep(10000);
-	    		
-
-	       
-	    		WebElement unitDropdown = driver.findElement(
-	    			    By.xpath("(//select)[last()]")
+	       WebElement reminderValue = driver.findElement(By.xpath("//input[@placeholder='30']"));
+	       reminderValue.clear();
+	       reminderValue.sendKeys("45");
+           Thread.sleep(10000);
+	       WebElement unitDropdown = driver.findElement(
+	    			   By.xpath("(//select)[last()]")
 	    			);
 
 	    			Select select = new Select(unitDropdown);
-	    			select.selectByVisibleText("hours");
-
-	       
-	       
-	    
-           driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+	    			select.selectByVisibleText("minutes");
+	    			driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 
 		}
 

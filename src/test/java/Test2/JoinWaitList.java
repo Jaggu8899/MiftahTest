@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 public class JoinWaitList extends BaseTest {
 
     public void joinWaitListForm() throws Exception {
-        driver.get("https://dev.miftah.ai/");
+        driver.get("https://dev.miftah.ai/landing/");
         Thread.sleep(5000);
 
         driver.findElement(By.xpath("//button[normalize-space()='Join the Waitlist']")).click();

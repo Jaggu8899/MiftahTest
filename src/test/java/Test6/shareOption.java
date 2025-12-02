@@ -20,11 +20,11 @@ public class shareOption {
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://dev.miftah.ai/");
 	       driver.manage().window().maximize();
-	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Login']]")).click();
+	       
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 	       driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
-	       driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
+	       driver.findElement(By.xpath("//button[text()='Login']")).click();
 	       Thread.sleep(3000);
 	       driver.findElement( By.xpath("//button[.//span[text()='Itinerary']]")).click();
 		   Thread.sleep(3000);

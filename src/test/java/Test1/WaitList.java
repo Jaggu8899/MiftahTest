@@ -17,7 +17,7 @@ public class WaitList {
         
        WebDriverManager.chromedriver().setup();
        WebDriver driver = new ChromeDriver();
-       driver.get("https://dev.miftah.ai/");
+       driver.get("https://dev.miftah.ai/landing/");
        driver.manage().window().maximize();
        Thread.sleep(5000);
        driver.findElement(By.xpath("//button[normalize-space()='Join the Waitlist']")).click();

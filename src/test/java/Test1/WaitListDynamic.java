@@ -22,7 +22,7 @@ public class WaitListDynamic {
             WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.get("https://dev.miftah.ai/");
+            driver.get("https://dev.miftah.ai/landing/");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//button[normalize-space()='Join the Waitlist']")).click();
             Thread.sleep(4000);
