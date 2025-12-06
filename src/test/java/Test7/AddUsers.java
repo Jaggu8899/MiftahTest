@@ -12,14 +12,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Test
 public class AddUsers {
 
 	public static void main(String[] args) throws Exception {
 		
-		WebDriverManager.chromedriver().setup();
+		   WebDriverManager.chromedriver().setup();
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://crmdev.miftah.ai/dashboard/");
 	       driver.manage().window().maximize();
@@ -32,9 +33,9 @@ public class AddUsers {
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//span[normalize-space()='Add User']")).click();
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("12345");
-	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("143456%@gmail.com");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("12761");
+	       Thread.sleep(5000);
+	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("143451%@gmail.com");
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		    // Click dropdown to open it
@@ -43,7 +44,7 @@ public class AddUsers {
 
 		    // Wait for the +91 option to be visible and clickable
 		    WebElement option = wait.until(ExpectedConditions.elementToBeClickable(
-		        By.xpath("//div[contains(@class,'dropdown-menu')]//div[text()='+91']")));
+		        By.xpath("//div[contains(@class,'dropdown-menu')]//div[text()='+91']"))); 
 		    option.click();
 		    Thread.sleep(3000);
 
@@ -53,7 +54,7 @@ public class AddUsers {
 		    phone.sendKeys(Keys.DELETE);
 
 		    // Type full phone number including country code
-		    phone.sendKeys("9876543210");
+		    phone.sendKeys("9876543212");
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//input[@placeholder='Enter password']")).sendKeys("Jaggu@89");
 		    Thread.sleep(3000);
@@ -66,10 +67,7 @@ public class AddUsers {
 		    ((JavascriptExecutor)driver).executeScript("arguments[0].click();", addUserBtn);
 		    Thread.sleep(3000);
 		    
-		  File SourceFile =  driver.getScreenshotAs(OutputType.FILE);
-		  File destiFile = new File ("C:\\Users\\NS\\Desktop\\Miftah(Test)\\MaveenProject\\src\\test\\resource\\img4.JPG");
-		  FileUtils.copyFile(SourceFile, destiFile);
-		  System.out.println("ss saved successfully");
+		 
 		    
 		    
 		    

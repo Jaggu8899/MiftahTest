@@ -15,7 +15,7 @@ public class HidingBookings {
 	public static void main(String[] args) throws Exception {
 		
 		
-		WebDriverManager.chromedriver().setup();
+		   WebDriverManager.chromedriver().setup();
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://dev.miftah.ai/");
 	       driver.manage().window().maximize();
@@ -53,7 +53,7 @@ public class HidingBookings {
 					System.out.println("Hide bookings success");
 					
 					  
-					driver.quit();
+					
 
 		
 		

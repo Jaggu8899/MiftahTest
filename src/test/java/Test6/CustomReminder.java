@@ -5,11 +5,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CustomReminder {
-
+	@Test
 	public static void main(String[] args) throws Exception {
 		
 		   WebDriverManager.chromedriver().setup();
@@ -32,17 +33,17 @@ public class CustomReminder {
 	       WebElement start = driver.findElement(By.xpath("//label[contains(text(),'Start Date')]/following::input[1]"));
 	       start.click();
 	       start.clear();
-	       start.sendKeys("6-12-2025");
+	       start.sendKeys("9-12-2025");
 
 	       // End Date
 	       WebElement end = driver.findElement(By.xpath("//label[contains(text(),'End Date')]/following::input[1]"));
 	       end.click();
 	       end.clear();
-	       end.sendKeys("6-12-2025");
+	       end.sendKeys("9-12-2025");
 	       Thread.sleep(5000);
 	    // Event Time
 	       WebElement time = driver.findElement(By.xpath("//input[@type='time']"));
-	       time.sendKeys("10:30");
+	       time.sendKeys("11:00");
 
 
 	       // End Time
@@ -70,7 +71,7 @@ public class CustomReminder {
 	       
 	       WebElement reminderValue = driver.findElement(By.xpath("//input[@placeholder='30']"));
 	       reminderValue.clear();
-	       reminderValue.sendKeys("45");
+	       reminderValue.sendKeys("44");
            Thread.sleep(10000);
 	       WebElement unitDropdown = driver.findElement(
 	    			   By.xpath("(//select)[last()]")
@@ -79,6 +80,10 @@ public class CustomReminder {
 	    			Select select = new Select(unitDropdown);
 	    			select.selectByVisibleText("minutes");
 	    			driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+	    			Thread.sleep(5000);
+	    			driver.findElement(By.xpath("//input[@placeholder='Search luxury experiences and events...']")).sendKeys("Ritz Carlton");
+
+	    			
 
 		}
 

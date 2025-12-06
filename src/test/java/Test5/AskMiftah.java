@@ -12,17 +12,15 @@ public class AskMiftah {
 		
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver= new ChromeDriver();
-		 driver.get("https://dev.miftah.ai/");
+		 driver.get("https://dev.miftah.ai/login");
 	       driver.manage().window().maximize();
-	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//button[.//span[normalize-space()='Login']]")).click();
 	       Thread.sleep(5000);
 	       driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 	       Thread.sleep(5000);
 	       driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
 	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
-	       Thread.sleep(3000);
+	       driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+           Thread.sleep(3000);
 	       driver.findElement(By.xpath("//textarea[@rows='1']")).sendKeys("Events");
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//button[.//img[contains(@src,'send.svg')]]")).click();
