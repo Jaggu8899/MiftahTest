@@ -1,4 +1,5 @@
-package Test1;
+
+       package Test1;
 
 import java.time.Duration;
 
@@ -37,9 +38,3 @@ public class WaitList {
     
     
 }
-
-
-
-
-
-

@@ -20,7 +20,6 @@ public class shareOption {
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://dev.miftah.ai/");
 	       driver.manage().window().maximize();
-	       
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 	       driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
@@ -41,11 +40,8 @@ public class shareOption {
 
 				shareBooking.click();
 				
-				
-				
-				
 				// Store parent window + URL
-				String parentWindow = driver.getWindowHandle();
+			    String parentWindow = driver.getWindowHandle();
 				String parentURL = driver.getCurrentUrl();
 
 				System.out.println("Parent Window ID: " + parentWindow);
@@ -91,31 +87,9 @@ public class shareOption {
 
 				// Switch back to parent (optional)
 				driver.switchTo().window(parentWindow);
+				Thread.sleep(2000);
+				driver.quit();
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	}
+		}
 
 }

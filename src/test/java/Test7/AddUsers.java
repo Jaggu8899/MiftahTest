@@ -33,9 +33,9 @@ public class AddUsers {
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//span[normalize-space()='Add User']")).click();
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("12761");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("jagadeesh");
 	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("143451%@gmail.com");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("jagadeeshh%@gmail.com");
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		    // Click dropdown to open it
@@ -54,7 +54,7 @@ public class AddUsers {
 		    phone.sendKeys(Keys.DELETE);
 
 		    // Type full phone number including country code
-		    phone.sendKeys("9876543212");
+		    phone.sendKeys("8876899292");
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//input[@placeholder='Enter password']")).sendKeys("Jaggu@89");
 		    Thread.sleep(3000);
@@ -67,11 +67,6 @@ public class AddUsers {
 		    ((JavascriptExecutor)driver).executeScript("arguments[0].click();", addUserBtn);
 		    Thread.sleep(3000);
 		    
-		 
-		    
-		    
-		    
-		   
-}
+		 }
 
 }

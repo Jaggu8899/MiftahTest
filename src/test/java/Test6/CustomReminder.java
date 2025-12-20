@@ -33,17 +33,17 @@ public class CustomReminder {
 	       WebElement start = driver.findElement(By.xpath("//label[contains(text(),'Start Date')]/following::input[1]"));
 	       start.click();
 	       start.clear();
-	       start.sendKeys("9-12-2025");
+	       start.sendKeys("26-12-2025");
 
 	       // End Date
 	       WebElement end = driver.findElement(By.xpath("//label[contains(text(),'End Date')]/following::input[1]"));
 	       end.click();
 	       end.clear();
-	       end.sendKeys("9-12-2025");
+	       end.sendKeys("26-12-2025");
 	       Thread.sleep(5000);
 	    // Event Time
 	       WebElement time = driver.findElement(By.xpath("//input[@type='time']"));
-	       time.sendKeys("11:00");
+	       time.sendKeys("10:00");
 
 
 	       // End Time
@@ -71,7 +71,7 @@ public class CustomReminder {
 	       
 	       WebElement reminderValue = driver.findElement(By.xpath("//input[@placeholder='30']"));
 	       reminderValue.clear();
-	       reminderValue.sendKeys("44");
+	       reminderValue.sendKeys("44abc");
            Thread.sleep(10000);
 	       WebElement unitDropdown = driver.findElement(
 	    			   By.xpath("(//select)[last()]")

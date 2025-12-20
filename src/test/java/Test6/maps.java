@@ -78,7 +78,7 @@ public class maps {
             System.out.println("📌 Screenshot captured: " + screenshotPath);
         }
 
-        driver.quit();
+       
     }
 }
 

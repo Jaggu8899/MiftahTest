@@ -42,7 +42,7 @@ public class Itinerary {
 
 		   // 1. Locate "View Details"
 		   WebElement viewDetails = wait1.until(ExpectedConditions.visibilityOfElementLocated(
-		           By.xpath("//div[contains(., 'View Details') and @role='menuitem']"))
+		           By.xpath("//div[normalize-space()='View Bill']"))
 		   );
 
 		   // 2. Locate "Download Details"

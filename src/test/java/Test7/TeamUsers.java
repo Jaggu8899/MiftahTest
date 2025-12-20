@@ -15,7 +15,7 @@ public class TeamUsers {
 
 	public static void main(String[] args) throws Exception {
 		
-		WebDriverManager.chromedriver().setup();
+		   WebDriverManager.chromedriver().setup();
 		   ChromeDriver driver= new ChromeDriver();
 		   driver.get("https://crmdev.miftah.ai/dashboard/");
 	       driver.manage().window().maximize();
@@ -28,13 +28,13 @@ public class TeamUsers {
 	       Thread.sleep(5000);
 	       driver.findElement(By.xpath("//div[contains(@class,'bg-white/20') and contains(@class,'rounded-lg')]")).click();
 	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("jagadeesh");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("jagadeeswara Rao");
 	       Thread.sleep(5000);
 	       WebElement roleDropdown = driver.findElement(By.xpath("//select[contains(@class,'form-input')]"));
            Select s = new Select(roleDropdown);
 	       s.selectByVisibleText("CRM");
 	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter email address']")).sendKeys("jagadeeshn%@gmail.com");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter email address']")).sendKeys("jagadeeshhh%@gmail.com");
 	       Thread.sleep(5000);
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	       WebElement dropdown1 = driver.findElement(By.xpath("//span[text()='+971']"));
@@ -45,7 +45,7 @@ public class TeamUsers {
 		        By.xpath("//div[contains(@class,'dropdown-menu')]//div[text()='+91']"))); 
 		    option.click();
 		    Thread.sleep(3000);
-		    driver.findElement(By.xpath("//input[@placeholder='9876543210']")).sendKeys("1234667893");
+		    driver.findElement(By.xpath("//input[@placeholder='9876543210']")).sendKeys("1234667893987");
 
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//input[@placeholder='Enter password']")).sendKeys("Jagadeesh@5");

@@ -25,35 +25,17 @@ public class mapsandtransport {
 		   Thread.sleep(3000);
 		   
 		   driver.findElement(By.xpath("//button[contains(normalize-space(),'Select Yalla')]")).click();
-		   Thread.sleep(5000);
+		   Thread.sleep(10000);
 		   
 		   WebElement element = driver.findElement(
 				    By.xpath("//*[name()='path' and @d='m6 6 12 12']")
 				);
 		           element.click();
 		           Thread.sleep(5000);
+		   driver.findElement(By.xpath("//span[contains(text(),'Dubai Marina, Dubai')]")).click();
 		   
-		    driver.findElement(By.xpath("//h3[text()='The Ritz-Carlton Ras Al Khaimah, Al Hamra Beach']")).click();
-
-		    Thread.sleep(5000);
-		   
-		    driver.quit();
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
 }
