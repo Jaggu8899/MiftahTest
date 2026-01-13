@@ -33,13 +33,13 @@ public class CustomReminder {
 	       WebElement start = driver.findElement(By.xpath("//label[contains(text(),'Start Date')]/following::input[1]"));
 	       start.click();
 	       start.clear();
-	       start.sendKeys("26-12-2025");
+	       start.sendKeys("08-01-2026");
 
 	       // End Date
 	       WebElement end = driver.findElement(By.xpath("//label[contains(text(),'End Date')]/following::input[1]"));
 	       end.click();
 	       end.clear();
-	       end.sendKeys("26-12-2025");
+	       end.sendKeys("08-01-2026");
 	       Thread.sleep(5000);
 	    // Event Time
 	       WebElement time = driver.findElement(By.xpath("//input[@type='time']"));
@@ -78,13 +78,11 @@ public class CustomReminder {
 	    			);
 
 	    			Select select = new Select(unitDropdown);
-	    			select.selectByVisibleText("minutes");
+	    			select.selectByVisibleText("hours");
 	    			driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
-	    			Thread.sleep(5000);
+	    			Thread.sleep(10000);
 	    			driver.findElement(By.xpath("//input[@placeholder='Search luxury experiences and events...']")).sendKeys("Ritz Carlton");
 
-	    			
-
-		}
+	    			}
 
 }

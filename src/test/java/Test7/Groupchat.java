@@ -41,10 +41,6 @@ public class Groupchat {
 	       WebElement sendBtn = driver.findElement(By.xpath("//button[.//span[text()='Send']]"));
 	       sendBtn.click();
 
-
-
-		
-
-	}
+}
 
 }

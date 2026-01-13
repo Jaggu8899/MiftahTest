@@ -37,6 +37,10 @@ public class Partner {
        WebElement dropdown = driver.findElement(By.xpath("//select[option[normalize-space()='Select partnership type']]"));
        Select select = new Select(dropdown);
        select.selectByVisibleText("Technology Partner");
+       Thread.sleep(1000);
+       Select industry = new Select(driver.findElement(By.xpath("//select[option[normalize-space()='Select your industry']]")));
+       industry.selectByVisibleText("Technology");
+       Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@placeholder='Enter your full name']")).sendKeys("jagadeesh");
        Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@placeholder='Enter your email address']")).sendKeys("jagadeeswara89@gmail.com");
@@ -48,8 +52,7 @@ public class Partner {
        Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@placeholder='Enter your company name']")).sendKeys("Miftah Technologies");
        Thread.sleep(1000);
-       Select industry = new Select(driver.findElement(By.xpath("//select[option[normalize-space()='Select your industry']]")));
-       industry.selectByVisibleText("Technology");
+       
        Thread.sleep(1000);
        WebElement referralDropdown = driver.findElement(By.xpath("//label[contains(text(),'How did you hear about us?')]/following::select[1]"));
        Select referralSelect = new Select(referralDropdown);
@@ -67,7 +70,7 @@ public class Partner {
            submitBtn.click();
 
            Thread.sleep(2000);
-           driver.quit();
+           
        
   }
 }

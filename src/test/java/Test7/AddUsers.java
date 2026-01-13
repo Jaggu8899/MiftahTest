@@ -35,7 +35,7 @@ public class AddUsers {
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("jagadeesh");
 	       Thread.sleep(5000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("jagadeeshh%@gmail.com");
+	       driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("jagadeeshN%@gmail.com");
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		    // Click dropdown to open it
@@ -54,7 +54,7 @@ public class AddUsers {
 		    phone.sendKeys(Keys.DELETE);
 
 		    // Type full phone number including country code
-		    phone.sendKeys("8876899292");
+		    phone.sendKeys("8879999294");
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//input[@placeholder='Enter password']")).sendKeys("Jaggu@89");
 		    Thread.sleep(3000);

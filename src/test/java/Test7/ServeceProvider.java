@@ -41,7 +41,7 @@ public class ServeceProvider {
 	       select1.selectByVisibleText("Accommodation");   // choose any option
 	       driver.findElement(By.xpath("//input[@placeholder='Enter full name']")).sendKeys("Jagadeesh");
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("//input[@placeholder='Enter email address']")).sendKeys("testmm@gmail.com");  // invalid characters
+	       driver.findElement(By.xpath("//input[@placeholder='Enter email address']")).sendKeys("jagadeesh@gmail.com");  // invalid characters
 	       Thread.sleep(3000);
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -54,7 +54,7 @@ public class ServeceProvider {
 	        By.xpath("//div[contains(@class,'dropdown-menu')]//div[text()='+91']")));
 	    option.click();
 
-	    driver.findElement(By.xpath("//input[@type='tel' and @placeholder='+971501234567']")).sendKeys("9976793513");
+	    driver.findElement(By.xpath("//input[@type='tel' and @placeholder='+971501234567']")).sendKeys("9976999519");
 	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//input[@placeholder='Enter company name']")).sendKeys("intelliod");
 	    Thread.sleep(3000);
