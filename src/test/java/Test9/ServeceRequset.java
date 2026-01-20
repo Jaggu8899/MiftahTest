@@ -17,10 +17,10 @@ public class ServeceRequset {
 	public static void main(String[] args) throws Exception {
 		
 		  WebDriverManager.chromedriver().setup();
-	       WebDriver driver = new ChromeDriver();
-	       driver.get("https://dev.miftah.ai/");
-	       driver.manage().window().maximize();
-	       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	      WebDriver driver = new ChromeDriver();
+	      driver.get("https://dev.miftah.ai/");
+	      driver.manage().window().maximize();
+	      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		  driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
 		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
 		  driver.findElement(By.xpath("//button[text()='Login']")).click();

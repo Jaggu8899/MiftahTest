@@ -2,10 +2,7 @@ package Test9;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +12,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BookingFlow {
+public class CuratedBookings {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -29,7 +26,7 @@ public class BookingFlow {
     }
 
     @Test
-    public void bookExperienceAndVerifyInCRM() {
+    public void bookExperienceAndVerifyInCRM() throws Exception {
 
         /* ================= USER PORTAL ================= */
 
@@ -37,98 +34,94 @@ public class BookingFlow {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
                 .sendKeys("jagadeeswara89@gmail.com");
+
         driver.findElement(By.id("password"))
                 .sendKeys("Jaggu@89");
+
         driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 
+        // Miftah Recommends
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[normalize-space()='Miftah Recommends']"))).click();
 
+        // Curated Experiences
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[contains(text(),'Curated Experiences')]"))).click();
 
+        // Select Experience
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//img[contains(@alt,'Cauto')]"))).click();
+        
 
+        // Book Now
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[normalize-space()='Book Now']"))).click();
 
-        /* ================= DATE (FIXED) ================= */
+        /* ================= DATE ================= */
 
-        String bookingDate = "2026-01-28";
-        validateDate(bookingDate);
+        WebElement dateInput = driver.findElement(
+			    By.xpath("//input[@type='date' and @min='2026-01-20']")
+			);
 
-        WebElement dateInput = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//input[@type='date']")));
-        dateInput.sendKeys(bookingDate);
+			// Set date directly
+        Thread.sleep(5000);
+	  dateInput.sendKeys("31-01-2026");
+        Thread.sleep(5000);
 
         /* ================= TIME ================= */
 
-        WebElement timeSlot = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//*[contains(text(),'available') and not(contains(text(),'0 available'))]")));
-        timeSlot.click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[contains(normalize-space(),'PM') and contains(text(),'available')]"))).click();
+        Thread.sleep(5000);
         /* ================= GUESTS ================= */
-
-        int guests = 5;
-        validateGuests(guests);
 
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[normalize-space()='5 Guests']"))).click();
-
+        Thread.sleep(5000);
         /* ================= CONTINUE ================= */
 
-        WebElement continueBtn = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[normalize-space()='Continue']")));
-
-        if (!continueBtn.isEnabled()) {
-            throw new RuntimeException("Continue button disabled due to invalid input");
-        }
-        continueBtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Continue' and not(@disabled)]"))).click();
+         
+        Thread.sleep(5000);
 
         /* ================= CONFIRM BOOKING ================= */
 
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[normalize-space()='Confirm Booking']"))).click();
+        
+        Thread.sleep(5000);
 
-        /* ================= CRM ================= */
+        /* ================= CRM PORTAL ================= */
 
         driver.get("https://crmdev.miftah.ai/dashboard/");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
                 .sendKeys("jagadeeswara89@gmail.com");
+
         driver.findElement(By.id("password"))
                 .sendKeys("Jaggu@89");
+
         driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 
+        // Service Requests
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[normalize-space()='Service Requests']"))).click();
 
+        // Open request
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//td[normalize-space()='Cauto']"))).click();
 
+        // Verify & Confirm
         WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[normalize-space()='Verify & Confirm']")));
 
         ((JavascriptExecutor) driver)
                 .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
 
+        // Confirmed Tab
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
-    }
-
-    /* ================= VALIDATIONS ================= */
-
-    private void validateDate(String date) {
-        if (date.compareTo("2026-01-13") < 0) {
-            throw new RuntimeException("Invalid date selected: " + date);
-        }
-    }
-
-    private void validateGuests(int guests) {
-        if (guests <= 1 || guests > 50) {
-            throw new RuntimeException("Invalid guest count: " + guests);
-        }
     }
 
     @AfterClass

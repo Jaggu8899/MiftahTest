@@ -2,7 +2,8 @@ package Test9;
 
 import java.time.Duration;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Bookings {
+public class EveBookings {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -21,12 +22,14 @@ public class Bookings {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
-    public void bookExperienceAndVerifyInCRM() throws Exception {
+    public void bookEventAndVerifyInCRM() throws Exception {
 
         /* ================= USER PORTAL ================= */
 
@@ -40,49 +43,30 @@ public class Bookings {
 
         driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 
-        // Miftah Recommends
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[normalize-space()='Miftah Recommends']"))).click();
 
-        // Curated Experiences
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//span[contains(text(),'Curated Experiences')]"))).click();
+                By.xpath("//button[contains(@data-filter-id,'events')]"))).click();
 
-        // Select Experience
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//img[contains(@alt,'Cauto')]"))).click();
+                By.xpath("//h3[contains(text(),'EVEnt')]"))).click();
 
-        // Book Now
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[normalize-space()='Book Now']"))).click();
+                By.xpath("//button[contains(normalize-space(),'Book Now')]"))).click();
 
-        /* ================= DATE ================= */
+        /* ================= ADD 5 TICKETS ================= */
 
-        WebElement dateInput = driver.findElement(
-			    By.xpath("//input[@type='date' and @min='2026-01-13']")
-			);
+        By plusBtn = By.xpath("//*[name()='svg' and contains(@class,'lucide-plus')]");
 
-			// Set date directly
-        Thread.sleep(5000);
-	  dateInput.sendKeys("28-01-2026");
+        for (int i = 1; i <= 10; i++) {
+            wait.until(ExpectedConditions.elementToBeClickable(plusBtn)).click();
+            Thread.sleep(1000);
+        }
         Thread.sleep(5000);
 
-        /* ================= TIME ================= */
-
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//*[contains(normalize-space(),'PM') and contains(text(),'available')]"))).click();
-        Thread.sleep(5000);
-        /* ================= GUESTS ================= */
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//*[normalize-space()='8 Guests']"))).click();
-        Thread.sleep(5000);
-        /* ================= CONTINUE ================= */
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[normalize-space()='Continue' and not(@disabled)]"))).click();
-
-        /* ================= CONFIRM BOOKING ================= */
+                By.xpath("//button[normalize-space()='Continue']"))).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[normalize-space()='Confirm Booking']"))).click();
@@ -99,28 +83,41 @@ public class Bookings {
 
         driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 
-        // Service Requests
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[normalize-space()='Service Requests']"))).click();
-
-        // Open request
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//td[normalize-space()='Cauto']"))).click();
-
-        // Verify & Confirm
-        WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[normalize-space()='Verify & Confirm']")));
-
-        ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
-
-        // Confirmed Tab
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+        Thread.sleep(5000);
     }
+    
 
     @AfterClass
     public void tearDown() {
         driver.quit();
     }
 }
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
