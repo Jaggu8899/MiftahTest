@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test9.CuratedBookings">
+      <class name="Test9.CurateBookings">
         <methods>
-          <include name="bookExperienceAndVerifyInCRM"/>
+          <include name="userPortalBooking"/>
+          <include name="crmVerification"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="userPortalItineraryCheck"/>
         </methods>
-      </class> <!-- Test9.CuratedBookings -->
+      </class> <!-- Test9.CurateBookings -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

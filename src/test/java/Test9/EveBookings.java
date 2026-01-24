@@ -3,7 +3,9 @@ package Test9;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -86,13 +88,32 @@ public class EveBookings {
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[normalize-space()='Service Requests']"))).click();
         Thread.sleep(5000);
-    }
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//td[normalize-space()='jagadeesh']"))).click();
+        
+
+        // Verify & Confirm
+        WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Verify & Confirm']")));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
+
+        // Confirmed Tab
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+        
+     // Confirmed Tab
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+        
+       }
     
 
-    @AfterClass
+    /*   @AfterClass
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }
 
 

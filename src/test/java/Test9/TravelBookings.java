@@ -95,10 +95,40 @@ public class TravelBookings {
     		).click();
 
       
+      /* ================= CRM PORTAL ================= */
+
+      driver.get("https://crmdev.miftah.ai/dashboard/");
+
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+              .sendKeys("jagadeeswara89@gmail.com");
+
+      driver.findElement(By.id("password"))
+              .sendKeys("Jaggu@89");
+
+      driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+      wait.until(ExpectedConditions.elementToBeClickable(
+              By.xpath("//span[normalize-space()='Service Requests']"))).click();
+      Thread.sleep(5000);
       
+      wait.until(ExpectedConditions.elementToBeClickable(
+              By.xpath("//td[normalize-space()='jagadeesh']"))).click();
       
+   // Verify & Confirm
+      WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
+              By.xpath("//button[normalize-space()='Verify & Confirm']")));
+
+      ((JavascriptExecutor) driver)
+              .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
+
+      // Confirmed Tab
+      wait.until(ExpectedConditions.elementToBeClickable(
+              By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+
       
-      
+   // Confirmed Tab
+      wait.until(ExpectedConditions.elementToBeClickable(
+              By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
       
       
       

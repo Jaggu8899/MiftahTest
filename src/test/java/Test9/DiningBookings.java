@@ -36,7 +36,7 @@ public class DiningBookings {
 		  driver.findElement(By.xpath("//button[normalize-space()='Book Now']")).click();
 	
 		  WebElement dateInput = driver.findElement(
-				    By.xpath("//input[@type='date' and @min='2026-01-20']")
+				    By.xpath("//input[@type='date' and @min='2026-01-21']")
 				);
          // Set date directly
 	       Thread.sleep(5000);
@@ -46,7 +46,7 @@ public class DiningBookings {
 
 	     // Increase value by 1 using JavaScript
 	     JavascriptExecutor js = (JavascriptExecutor) driver;
-	     js.executeScript("arguments[0].stepUp(5);", input);
+	     js.executeScript("arguments[0].stepUp(20);", input);
 	     Thread.sleep(5000);
 	     driver.findElement(By.xpath("//div[normalize-space()='Breakfast']")).click();
 	     Thread.sleep(5000);
@@ -80,7 +80,10 @@ public class DiningBookings {
 	                 By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
 	     
 	         Thread.sleep(3000);
-	         driver.findElement(By.xpath("//button[contains(normalize-space(),'Confirmed')]")).click();
+	         // Confirmed Tab
+	         wait.until(ExpectedConditions.elementToBeClickable(
+	                 By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+	         
 
 	       
 

@@ -65,7 +65,16 @@ public class RealityBookings {
          wait.until(ExpectedConditions.elementToBeClickable(
                  By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
          
-         driver.navigate().refresh();
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 
          
 
