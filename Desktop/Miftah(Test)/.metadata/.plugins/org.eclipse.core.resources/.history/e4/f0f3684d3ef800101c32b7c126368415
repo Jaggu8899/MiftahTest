@@ -1,0 +1,224 @@
+package Test10;
+
+import java.io.File;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class creatEvent {
+	
+	
+	public static void main(String[] args) throws Exception {
+		
+		   WebDriverManager.chromedriver().setup();
+		   ChromeDriver driver= new ChromeDriver();
+		   driver.get("https://crmdev.miftah.ai/dashboard/");
+	       driver.manage().window().maximize();
+	       driver.findElement(By.id("email")).sendKeys("jagadeeswara89@gmail.com");
+	       Thread.sleep(3000);
+	       driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+	       driver.findElement(By.xpath("//button[text()='Login']")).click();
+	       
+	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+	       By miftahBtn = By.xpath("//span[normalize-space()='Miftah Recommendations']/ancestor::button");
+
+	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(miftahBtn));
+	       element.click();
+	      
+	       Thread.sleep(5000);
+	       
+	       driver.findElement(By.xpath("//button[contains(@class,'group p-2')]")).click();
+	
+	       driver.findElement(By.xpath("//p[text()='Events']/following-sibling::p")).click();
+	
+	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[1]")).sendKeys("CauDubai");
+	       
+	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[2]")).sendKeys("5");
+	
+	       Select currency = new Select(driver.findElement(
+	    		    By.xpath("(//select[contains(@class,'w-full px-3')])[1]")
+	    		));
+
+	    		currency.selectByIndex(12);  // INR (index starts from 0)
+	
+	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[1]")).sendKeys("description");
+	
+	    		driver.findElement(By.xpath("//input[@placeholder='Enter location']")).sendKeys("Dubai");
+	    		
+	    		driver.findElement(By.xpath("//input[@placeholder='Enter city']")).sendKeys("Dubai");
+	
+	    		driver.findElement(By.xpath("//input[@placeholder='contact@example.com']")).sendKeys("jagadeesh7275@gmail.com");
+	    		
+	    		// 1. Click country code dropdown
+	    		By countryDropdown = By.xpath("//button[.//span[normalize-space()='+971']]");
+	    		wait.until(ExpectedConditions.elementToBeClickable(countryDropdown)).click();
+
+	    		// 2. Click India +91
+	    		By indiaCode = By.xpath("//*[contains(text(),'+91')]");
+	    		wait.until(ExpectedConditions.elementToBeClickable(indiaCode)).click();
+	    		
+	    		driver.findElement(By.xpath("(//label[normalize-space(text())='Contact Phone']/following::input)[1]")).sendKeys("9876543211");
+	    		
+	    		
+	    		driver.findElement(By.xpath("//input[@placeholder='Enter contact person name']")).sendKeys("jagadeesh");
+	    		// COVER IMAGE INPUT (FIRST)
+	    		WebElement coverInput = wait.until(
+	    		    ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[1]"))
+	    		);
+
+	    		((JavascriptExecutor) driver).executeScript(
+	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
+	    		    coverInput
+	    		);
+
+	    		String coverPath = "C:\\Users\\NS\\Desktop\\images\\download (3).jpg";
+	    		coverInput.sendKeys(coverPath);
+
+	    
+	
+	    		Thread.sleep(5000);
+	
+	
+	    		// ADDITIONAL IMAGES INPUT (SECOND)
+	    		WebElement additionalInput = wait.until(
+	    		    ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[2]"))
+	    		);
+
+	    		((JavascriptExecutor) driver).executeScript(
+	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
+	    		    additionalInput
+	    		);
+
+	    		// Folder
+	    		File folder = new File("C:\\Users\\NS\\Desktop\\images");
+	    		File[] files = folder.listFiles();
+
+	    		for (File f : files) {
+
+	    		    if (f.isFile()) {
+
+	    		        System.out.println("Uploading additional: " + f.getName());
+
+	    		        additionalInput.sendKeys(f.getAbsolutePath());
+
+	    		        Thread.sleep(2000);
+
+	    		        // Re-locate input (site refreshes it)
+	    		        additionalInput = wait.until(
+	    		            ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[2]"))
+	    		        );
+	    		    }
+	    		}
+	    		
+	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[2]")).sendKeys("<iframe src=\\\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1107029.2201364434!2d54.568041327437584!3d25.0745656650172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1769148737410!5m2!1sen!2sin\\\" width=\\\"600\\\" height=\\\"450\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" loading=\\\"lazy\\\" referrerpolicy=\\\"no-referrer-when-downgrade\\\"></iframe>\"");
+               
+	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[3]")).sendKeys("Directions");
+	    		
+	    		driver.findElement(By.name("term_and_conditions")).sendKeys("Terms and conditions");
+	    		
+	    		driver.findElement(By.name("age_policy")).sendKeys("Age policy");
+	    		
+	    		driver.findElement(By.name("cancellation_policy")).sendKeys("Cancellation policy"); 
+	    
+	    		driver.findElement(By.name("leadTime")).sendKeys("3.5");
+	    		
+	    		// 1️⃣ Enter meta data
+	    		WebElement metaInput = wait.until(
+	    		    ExpectedConditions.elementToBeClickable(
+	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')])[1]")
+	    		    )
+	    		);
+
+	    		metaInput.clear();
+	    		metaInput.sendKeys("selenium, automation, testing");
+
+	    		// 2️⃣ Click Add button
+	    		WebElement addButton = wait.until(
+	    		    ExpectedConditions.elementToBeClickable(
+	    		        By.xpath("//button[normalize-space()='Add']")
+	    		    )
+	    		);
+	    		addButton.click();
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		// Locate input
+	    		WebElement expInput = wait.until(
+	    		    ExpectedConditions.elementToBeClickable(
+	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')])[2]")
+	    		    )
+	    		);
+
+	    		
+	    		
+	    		// Type experience includes
+	    		expInput.clear();
+	    		expInput.sendKeys("Hotel pickup, Guide included, Free lunch");
+
+	    		
+	    		WebElement addBtn = wait.until(
+	    		    ExpectedConditions.elementToBeClickable(
+	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')]/following-sibling::button)[2]")
+	    		    )
+	    		);
+
+	    		// Click Add
+	    		addBtn.click();
+	    		
+	    		driver.findElement(By.name("eventDescription")).sendKeys("event description");
+	    		
+	    		driver.findElement(By.name("eventDate")).sendKeys();
+	    		
+	    		
+	    		driver.findElement(By.name("eventDate")).sendKeys("27-01-2026");
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

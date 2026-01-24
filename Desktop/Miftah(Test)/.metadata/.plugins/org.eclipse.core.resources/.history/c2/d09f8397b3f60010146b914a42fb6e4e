@@ -1,0 +1,127 @@
+package Test9;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class EveBookings {
+
+    WebDriver driver;
+    WebDriverWait wait;
+
+    @BeforeClass
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    @Test
+    public void bookEventAndVerifyInCRM() throws Exception {
+
+        /* ================= USER PORTAL ================= */
+
+        driver.get("https://dev.miftah.ai/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("Jaggu@89");
+
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Miftah Recommends']"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(@data-filter-id,'events')]"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//h3[contains(text(),'EVEnt')]"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(normalize-space(),'Book Now')]"))).click();
+
+        /* ================= ADD 5 TICKETS ================= */
+
+        By plusBtn = By.xpath("//*[name()='svg' and contains(@class,'lucide-plus')]");
+
+        for (int i = 1; i <= 10; i++) {
+            wait.until(ExpectedConditions.elementToBeClickable(plusBtn)).click();
+            Thread.sleep(1000);
+        }
+        Thread.sleep(5000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Continue']"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Confirm Booking']"))).click();
+
+        /* ================= CRM PORTAL ================= */
+
+        driver.get("https://crmdev.miftah.ai/dashboard/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("Jaggu@89");
+
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Service Requests']"))).click();
+        Thread.sleep(5000);
+        
+        
+        
+        
+    }
+    
+
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
+}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

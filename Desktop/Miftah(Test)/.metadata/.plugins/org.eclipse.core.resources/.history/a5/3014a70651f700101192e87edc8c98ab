@@ -1,0 +1,126 @@
+package Test9;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.*;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CurateBookings {
+
+    WebDriver driver;
+    WebDriverWait wait;
+
+    // ===================== SETUP =====================
+    @BeforeClass
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+    }
+
+    // ===================== 1️⃣ USER PORTAL BOOKING =====================
+    @Test(priority = 1)
+    public void userPortalBooking() throws Exception {
+
+        driver.get("https://dev.miftah.ai/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Miftah Recommends']"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[contains(text(),'Curated Experiences')]"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//img[contains(@alt,'Cauto')]"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Book Now']"))).click();
+
+        WebElement dateInput = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//input[@type='date']")));
+        dateInput.clear();
+        dateInput.sendKeys("2026-01-30"); // HTML date format
+
+        List<WebElement> times = wait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[contains(text(),'available')]")));
+
+        int indexToClick = 2; // change to 3 for 3rd slot
+        wait.until(ExpectedConditions.elementToBeClickable(
+                times.get(indexToClick - 1))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[normalize-space()='5 Guests']"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Continue' and not(@disabled)]"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Confirm Booking']"))).click();
+    }
+
+    // ===================== 2️⃣ CRM VERIFICATION =====================
+    @Test(priority = 2, dependsOnMethods = "userPortalBooking")
+    public void crmVerification() {
+
+        driver.get("https://crmdev.miftah.ai/dashboard/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Service Requests']"))).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//td[normalize-space()='Cauto']"))).click();
+
+        WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Verify & Confirm']")));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+    }
+
+    // ===================== 3️⃣ USER PORTAL ITINERARY CHECK =====================
+    @Test(priority = 3, dependsOnMethods = "crmVerification")
+    public void userPortalItineraryCheck() {
+
+        driver.get("https://dev.miftah.ai/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        driver.navigate().refresh(); // ensure sync
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[.//span[text()='Itinerary']]"))).click();
+    }
+
+    // ===================== CLEANUP =====================
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
+}
+
+

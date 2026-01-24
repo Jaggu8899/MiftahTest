@@ -1,0 +1,103 @@
+package Test9;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class EveBookings {
+
+    public static void main(String[] args) throws Exception {
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+        driver.get("https://dev.miftah.ai/");
+
+        driver.findElement(By.id("email"))
+              .sendKeys("jagadeeswara89@gmail.com");
+
+        driver.findElement(By.id("password"))
+              .sendKeys("Jaggu@89");
+
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("//span[normalize-space()='Miftah Recommends']")).click();
+
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("//button[contains(@data-filter-id,'events')]")).click();
+
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//h3[contains(text(),'EVEnt')]")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//button[contains(normalize-space(),'Book Now')]")).click();
+        Thread.sleep(5000);
+        By plusBtn = By.xpath("//*[name()='svg' and contains(@class,'lucide-plus')]");
+
+        for (int i = 1; i <= 5; i++) {
+            driver.findElement(plusBtn).click();
+            Thread.sleep(500); // small wait so UI updates properly
+        }
+
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+    }
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

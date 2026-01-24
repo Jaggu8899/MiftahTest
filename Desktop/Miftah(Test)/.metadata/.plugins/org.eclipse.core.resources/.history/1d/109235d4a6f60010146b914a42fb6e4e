@@ -1,0 +1,156 @@
+package Test9;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CuratedBookings {
+
+    WebDriver driver;
+    WebDriverWait wait;
+
+    @BeforeClass
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    }
+
+    @Test
+    public void bookExperienceAndVerifyInCRM() throws Exception {
+
+        /* ================= USER PORTAL ================= */
+
+        driver.get("https://dev.miftah.ai/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("Jaggu@89");
+
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        // Miftah Recommends
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Miftah Recommends']"))).click();
+
+        // Curated Experiences
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[contains(text(),'Curated Experiences')]"))).click();
+
+        // Select Experience
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//img[contains(@alt,'Cauto')]"))).click();
+        
+
+        // Book Now
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Book Now']"))).click();
+
+        /* ================= DATE ================= */
+
+        WebElement dateInput = driver.findElement(
+			    By.xpath("//input[@type='date' and @min='2026-01-21']")
+			);
+
+			// Set date directly
+        Thread.sleep(5000);
+	  dateInput.sendKeys("31-01-2026");
+        Thread.sleep(5000);
+        
+        List<WebElement> times = wait.until(
+        	    ExpectedConditions.visibilityOfAllElementsLocatedBy(
+        	        By.xpath("//*[contains(text(),'available')]")
+        	    )
+        	);
+
+        	// Click 2nd today, change to 3 for next run
+        	int indexToClick = 3;
+
+        	wait.until(ExpectedConditions.elementToBeClickable(
+        	    times.get(indexToClick - 1)
+        	)).click();
+        	Thread.sleep(3000);
+        	
+        	wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[normalize-space()='5 Guests']"))).click();
+        Thread.sleep(5000);
+        /* ================= CONTINUE ================= */
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Continue' and not(@disabled)]"))).click();
+         
+        Thread.sleep(5000);
+
+        /* ================= CONFIRM BOOKING ================= */
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Confirm Booking']"))).click();
+        
+        Thread.sleep(5000);
+
+        /* ================= CRM PORTAL ================= */
+
+        driver.get("https://crmdev.miftah.ai/dashboard/");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
+                .sendKeys("jagadeeswara89@gmail.com");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("Jaggu@89");
+
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        // Service Requests
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[normalize-space()='Service Requests']"))).click();
+
+        // Open request
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//td[normalize-space()='Cauto']"))).click();
+
+        // Verify & Confirm
+        WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Verify & Confirm']")));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", verifyBtn);
+
+        // Confirmed Tab
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[starts-with(normalize-space(),'Confirmed')]"))).click();
+        Thread.sleep(5000);
+        
+          driver.get("https://dev.miftah.ai/");
+	      driver.manage().window().maximize();
+	      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		  driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jagadeeswara89@gmail.com");
+		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jaggu@89");
+		  driver.findElement(By.xpath("//button[text()='Login']")).click();
+		  Thread.sleep(5000);
+		  driver.findElement(By.xpath("//button[.//span[normalize-space()='Itinerary']]")).click();
+
+        
+        
+        
+        
+        
+        
+  }
+
+    /* @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }*/
+}

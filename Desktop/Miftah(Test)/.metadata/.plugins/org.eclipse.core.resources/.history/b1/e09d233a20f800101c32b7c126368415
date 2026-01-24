@@ -1,0 +1,166 @@
+package Test10;
+
+import java.io.File;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class creatCurated {
+	
+	public static void main(String[] args) throws Exception {
+		
+		   WebDriverManager.chromedriver().setup();
+		   ChromeDriver driver= new ChromeDriver();
+		   driver.get("https://crmdev.miftah.ai/dashboard/");
+	       driver.manage().window().maximize();
+	       driver.findElement(By.id("email")).sendKeys("jagadeeswara89@gmail.com");
+	       Thread.sleep(3000);
+	       driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+	       driver.findElement(By.xpath("//button[text()='Login']")).click();
+	       
+	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+	       By miftahBtn = By.xpath("//span[normalize-space()='Miftah Recommendations']/ancestor::button");
+
+	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(miftahBtn));
+	       element.click();
+	      
+	       Thread.sleep(5000);
+	       
+	       driver.findElement(By.xpath("//button[contains(@class,'group p-2')]")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.xpath("//p[text()='Curated Experiences']/following-sibling::p")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[1]")).sendKeys("Testing");
+	       Thread.sleep(5000);
+	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[2]")).sendKeys("5");
+	       Thread.sleep(5000);
+	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[3]")).sendKeys("2.5");
+	
+	       Select currency = new Select(driver.findElement(
+	    		    By.xpath("(//select[contains(@class,'w-full px-3')])[1]")
+	    		));
+
+	    		currency.selectByIndex(12);  // INR (index starts from 0)
+
+	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[1]")).sendKeys("testing crteated the event");
+	
+	    		driver.findElement(By.xpath("//input[@placeholder='Enter location']")).sendKeys("Dubai");
+	
+	    		driver.findElement(By.xpath("//input[@placeholder='Enter city']")).sendKeys("Dubai");
+	    		 
+	    		driver.findElement(By.xpath("//input[@placeholder='contact@example.com']")).sendKeys("jagadeesh7275@gmail.com");
+	
+	    		
+	    	
+
+	    		// 1. Click country code dropdown
+	    		By countryDropdown = By.xpath("//button[.//span[normalize-space()='+971']]");
+	    		wait.until(ExpectedConditions.elementToBeClickable(countryDropdown)).click();
+
+	    		// 2. Click India +91
+	    		By indiaCode = By.xpath("//*[contains(text(),'+91')]");
+	    		wait.until(ExpectedConditions.elementToBeClickable(indiaCode)).click();
+
+	    		driver.findElement(By.xpath("(//label[normalize-space(text())='Contact Phone']/following::input)[1]")).sendKeys("9876543211");
+	
+	    		driver.findElement(By.name("contactPerson")).sendKeys("jagadeesh");
+	    		Thread.sleep(5000);
+	    		
+	    		
+
+	    		// Locate the REAL file input (not the button)
+	    		WebElement fileInput = wait.until(
+	    		    ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']"))
+	    		);
+
+	    		// Make it visible if hidden
+	    		((JavascriptExecutor) driver).executeScript(
+	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
+	    		    fileInput
+	    		);
+
+	    		// Your file path
+	    		String path = "C:\\Users\\NS\\Desktop\\images\\download (3).jpg";
+
+	    		// Safety check
+	    		File f = new File(path);
+	    		System.out.println("File exists: " + f.exists());
+
+	    		// Upload file
+	    		fileInput.sendKeys(path);
+
+	    
+	    		// Locate the REAL file input inside your div
+	    		WebElement fileInputt = driver.findElement(By.xpath("//div[contains(@class,'relative border-2')]//input[@type='file']"));
+
+	    		// Make input visible if hidden
+	    		((JavascriptExecutor) driver).executeScript(
+	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
+	    		    fileInputt
+	    		);
+
+	    		// Folder path
+	    		File folder = new File("C:\\Users\\NS\\Desktop\\images");
+
+	    		// Get all files
+	    		File[] files = folder.listFiles();
+
+	    		// Build multi-file string
+	    		StringBuilder allFiles = new StringBuilder();
+
+	    		for (File ff : files) {
+	    		    if (ff.isFile()) {
+	    		        allFiles.append(ff.getAbsolutePath()).append("\n");
+	    		    }
+	    		}
+
+	    		// Upload all at once
+	    		fileInput.sendKeys(allFiles.toString().trim());
+	
+	
+	
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,63 @@
+package Test9;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class RealityBookings {
+	
+	 public static void main(String[] args) throws Exception {
+
+	        WebDriverManager.chromedriver().setup();
+	        WebDriver driver = new ChromeDriver();
+
+	        driver.get("https://dev.miftah.ai/");
+	        driver.manage().window().maximize();
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+	        driver.findElement(By.id("email"))
+	              .sendKeys("jagadeeswara89@gmail.com");
+
+	        driver.findElement(By.id("password"))
+	              .sendKeys("Jaggu@89");
+
+	        driver.findElement(By.xpath("//button[text()='Login']")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//span[normalize-space()='Miftah Recommends']")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//span[text()='Realty']")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//h3[normalize-space()='Reality']")).click();
+            Thread.sleep(5000);
+            WebElement dropdown = driver.findElement(By.xpath("//select[contains(@class,'bg-background-input')]"));
+            Select select = new Select(dropdown);
+            select.selectByIndex(1); // Apartment
+            WebElement dropdown1 = driver.findElement(By.xpath("//select[contains(@class,'bg-background-input')]"));
+            Select select1 = new Select(dropdown);
+            select.selectByIndex(1); // Burj Al Arab, seaview
+           
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 }
+	
+	
+	
+
+}
