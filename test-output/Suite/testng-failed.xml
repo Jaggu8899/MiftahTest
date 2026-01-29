@@ -3,6 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="tests.WaitlistTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="joinWaitlistForm"/>
+        </methods>
+      </class> <!-- tests.WaitlistTest -->
       <class name="tests.LoginTest">
         <methods>
           <include name="setUp"/>
@@ -10,6 +17,13 @@
           <include name="loginToMiftah"/>
         </methods>
       </class> <!-- tests.LoginTest -->
+      <class name="tests.PartnerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="partnerFormTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.PartnerTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
