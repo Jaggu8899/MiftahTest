@@ -1,0 +1,141 @@
+Total Test Cases Executed: 1
+----------------------------------------
+Passed Test Cases: 1   Negative Test Cases: 0
+----------------------------------------
+
+DETAILED LOGS PER Console:
+CONSOLE [SEVERE] : https://crmdev.miftah.ai/login/ - Failed to load resource: the server responded with a status of 404 ()
+CONSOLE [FINE] : https://crmdev.miftah.ai/login/ - [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+CONSOLE [SEVERE] : https://crmdev.miftah.ai/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/curated-experiences-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/waitlist?isApproved=true&search=masters.therapist%40gmail.com - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/travel-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/events-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/dining-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/waitlist-partners?isApproved=true&search=masters.therapist%40gmail.com - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/realty-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/events-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/curated-experiences-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/travel-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/dining-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+CONSOLE [SEVERE] : https://backend-dev.miftah.ai/api/v1/realty-bookings/all?page=1&limit=100 - Failed to load resource: the server responded with a status of 403 ()
+Log saved to: C:\Users\NS\Desktop\Miftah(Test)\MaveenProject\test-logs\Therapist_Positive_Base_Case_PASS.txt
+
+SCENARIO: Positive Base Case
+
+========================================
+[Header General Details]
+1. Request URL: https://backend-dev.miftah.ai/api/v1/master-users/therapist
+2. Request Method: POST
+3. Status Code: 201 
+4. Remote Address: 40.172.84.208:443
+5. Referrer Policy: no-referrer-when-downgrade
+Payload Data:
+primaryImage: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+additionalImages: (binary)
+specifics: {
+  "licenseNumber": "LIC123456",
+  "therapyMethods": [
+    "CBT"
+  ],
+  "sessionDurationMins": 5,
+  "insuranceAccepted": true,
+  "telehealthPlatform": "Zoom"
+}
+languages: [
+  "Arabic"
+]
+pricingOptions: {
+  "PER_SESSION": 100,
+  "PER_HOUR": 50,
+  "BESPOKE": 200
+}
+cities: [
+  "Dubai"
+]
+currency: AED
+phoneNumber: +919876543210
+locationType: REMOTE
+experienceYears: 500
+cancellationPolicy: Clear cancellation policy text.
+termsAndConditions: Full terms and conditions content.
+title: Dr. John Doe
+alternatePhoneNumber: +919876543211
+description: 10
+leadTime: 30
+basePrice: 120
+serviceRadiusKm: 10
+
+[NETWORK RESPONSE]
+{
+  "success": true,
+  "service": {
+    "status": "PENDING",
+    "ratingAvg": "0.0",
+    "reviewCount": 0,
+    "timezone": "UTC",
+    "createdAt": "2026-02-05T10:03:24.117Z",
+    "updatedAt": "2026-02-05T10:03:24.117Z",
+    "id": "54",
+    "userId": "410",
+    "title": "Dr. John Doe",
+    "description": "10",
+    "basePrice": "120.00",
+    "pricingOptions": {
+      "BESPOKE": 200,
+      "PER_HOUR": 50,
+      "PER_SESSION": 100
+    },
+    "currency": "AED",
+    "experienceYears": 500,
+    "leadTime": 30,
+    "locationType": "REMOTE",
+    "serviceRadiusKm": 10,
+    "phoneNumber": "+919876543210",
+    "alternatePhoneNumber": "+919876543211",
+    "primaryImage": "https://cdn.miftah.ai/master-user-services/general/primaryImage/aa5c84f7-30cf-45b7-8adb-959b8ca0601a-1770285803725.jpg",
+    "additionalImages": [
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/7b92851e-6d2b-48c1-b027-208dc4077ec1-1770285803725.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/30f68a7c-bcfe-43b7-a910-d704475bcd3a-1770285803807.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/602b99ca-a571-4d55-bb27-1dc5c8db7e6f-1770285803807.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/2193c0d1-1345-40f6-8de8-0b70f88d8066-1770285803808.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/cbe3d672-cf3e-45c2-8747-a154d8157cea-1770285803995.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/d11aeec5-6c5e-4158-bfa0-33e0ce3874e1-1770285803995.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/a430debd-81a7-4161-8fed-5d5f3a98d137-1770285803995.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/996b894e-b26d-422d-aa21-72b8633107e9-1770285803995.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/38f17234-52b0-4250-8fbe-0a300b84a4e3-1770285803995.jpg",
+      "https://cdn.miftah.ai/master-user-services/general/additionalImages/873d31a0-85d2-458d-82e1-4f0cc1258baa-1770285803995.jpg"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "cities": [
+      "Dubai"
+    ],
+    "cancellationPolicy": "Clear cancellation policy text.",
+    "termsAndConditions": "Full terms and conditions content.",
+    "licenseNumber": "LIC123456",
+    "therapyMethods": [
+      "CBT"
+    ],
+    "sessionDurationMins": 5,
+    "insuranceAccepted": true,
+    "telehealthPlatform": "Zoom",
+    "updated_at": "2026-02-05T10:03:24.117Z",
+    "created_at": "2026-02-05T10:03:24.117Z"
+  },
+  "message": "Service created successfully"
+}
+
+RESULT: PASSED 
+
+Report Generated on: 2026-02-05 15:33:39

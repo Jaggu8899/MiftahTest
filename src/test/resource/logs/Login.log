@@ -1,0 +1,1932 @@
+1) General
+Request URL: https://backend-dev.miftah.ai/api/v1/auth/signin-via-password
+Request Method: POST
+Status Code: 200 
+Remote Address: 158.252.156.253:443
+Referrer Policy: no-referrer-when-downgrade
+
+2) Response Headers
+etag: W/"75be-QJRkWONeIXHPU/5Cf7cmCEzwuMs"
+access-control-allow-credentials: true
+access-control-allow-origin: https://dev.miftah.ai
+content-length: 30142
+date: Wed, 18 Feb 2026 10:36:11 GMT
+content-type: application/json; charset=utf-8
+x-powered-by: Express
+vary: Origin
+
+3) Request Headers
+sec-ch-ua-platform: "Windows"
+Referer: https://dev.miftah.ai/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+sec-ch-ua: "Not:A-Brand";v="99", "Google Chrome";v="145", "Chromium";v="145"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+
+4) Request Payload
+{
+  "email": "jagadeeswara89@gmail.com",
+  "password": "Jaggu@89",
+  "deviceId": "cb134447-a777-4702-a111-99361ee94b74",
+  "deviceName": "Chrome 145 on Windows 10",
+  "deviceType": "desktop"
+}
+
+5) Response Body
+{
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "user": {
+      "id": "154",
+      "email": "jagadeeswara89@gmail.com",
+      "fullName": "jagadeesh",
+      "phoneNumber": "+9717095297275",
+      "isKycVerified": false,
+      "status": "active",
+      "emailVerifiedAt": "2025-11-07T04:46:38.346Z",
+      "lastLoginAt": "2026-02-18T10:36:10.809Z",
+      "roleId": "1",
+      "cognitoSub": "62867034-7091-70ad-e18b-8fe8d80e4e59",
+      "cognitoUsername": "jagadeeswara89@gmail.com",
+      "profileImage": "https://cdn.miftah.ai/blank-profile-picture-973460.svg",
+      "language": "en",
+      "customView": {
+        "theme": "dark",
+        "layout": "grid",
+        "timezone": "Asia/Kolkata",
+        "responsive": "auto",
+        "autoTimezone": true,
+        "incognitoMode": false
+      },
+      "userPartner": {
+        "isPartner": false
+      },
+      "createdAt": "2025-11-07T04:45:52.245Z",
+      "updatedAt": "2026-02-18T10:36:10.809Z",
+      "role": {
+        "id": "1",
+        "name": "Super Admin",
+        "type": "super_admin",
+        "description": "Full system access",
+        "is_active": true
+      },
+      "permissions": [
+        {
+          "id": "4202",
+          "resource": "dining_recommendations",
+          "action": "visibility"
+        },
+        {
+          "id": "4203",
+          "resource": "dining_recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4206",
+          "resource": "dining_recommendations",
+          "action": "delete"
+        },
+        {
+          "id": "4207",
+          "resource": "events_recommendations",
+          "action": "request"
+        },
+        {
+          "id": "4208",
+          "resource": "events_recommendations",
+          "action": "visibility"
+        },
+        {
+          "id": "4211",
+          "resource": "events_recommendations",
+          "action": "create"
+        },
+        {
+          "id": "4212",
+          "resource": "events_recommendations",
+          "action": "delete"
+        },
+        {
+          "id": "4213",
+          "resource": "events_recommendations",
+          "action": "review"
+        },
+        {
+          "id": "4216",
+          "resource": "master_users",
+          "action": "review_stylist"
+        },
+        {
+          "id": "4217",
+          "resource": "master_users",
+          "action": "read_makeup_artist"
+        },
+        {
+          "id": "4218",
+          "resource": "master_users",
+          "action": "review_consultant"
+        },
+        {
+          "id": "4221",
+          "resource": "master_users",
+          "action": "create_gardener"
+        },
+        {
+          "id": "4222",
+          "resource": "master_users",
+          "action": "read_own_makeup_artist"
+        },
+        {
+          "id": "4224",
+          "resource": "master_users",
+          "action": "read_gardener"
+        },
+        {
+          "id": "4226",
+          "resource": "master_users",
+          "action": "create_admin_tennis_coach"
+        },
+        {
+          "id": "4227",
+          "resource": "master_users",
+          "action": "read_stylist"
+        },
+        {
+          "id": "4229",
+          "resource": "master_users",
+          "action": "read_own_tennis_coach"
+        },
+        {
+          "id": "4231",
+          "resource": "master_users",
+          "action": "read_own_gardener"
+        },
+        {
+          "id": "4232",
+          "resource": "master_users",
+          "action": "read_chef"
+        },
+        {
+          "id": "4234",
+          "resource": "master_users",
+          "action": "review_trainer"
+        },
+        {
+          "id": "4236",
+          "resource": "master_users",
+          "action": "create_admin_trainer"
+        },
+        {
+          "id": "4237",
+          "resource": "master_users",
+          "action": "create_therapist"
+        },
+        {
+          "id": "4239",
+          "resource": "master_users",
+          "action": "read_own_consultant"
+        },
+        {
+          "id": "4241",
+          "resource": "master_users",
+          "action": "read_own_trainer"
+        },
+        {
+          "id": "4242",
+          "resource": "master_users",
+          "action": "read_own_architect"
+        },
+        {
+          "id": "4245",
+          "resource": "master_users",
+          "action": "create_architect"
+        },
+        {
+          "id": "4247",
+          "resource": "master_users",
+          "action": "create_chef"
+        },
+        {
+          "id": "4250",
+          "resource": "master_users",
+          "action": "review_lawyer"
+        },
+        {
+          "id": "4253",
+          "resource": "master_users",
+          "action": "create_admin_therapist"
+        },
+        {
+          "id": "4257",
+          "resource": "master_users",
+          "action": "review_makeup_artist"
+        },
+        {
+          "id": "4259",
+          "resource": "master_users",
+          "action": "create_makeup_artist"
+        },
+        {
+          "id": "4261",
+          "resource": "master_users",
+          "action": "create_admin_stylist"
+        },
+        {
+          "id": "4262",
+          "resource": "master_users",
+          "action": "read_consultant"
+        },
+        {
+          "id": "4264",
+          "resource": "master_users",
+          "action": "read_own_lawyer"
+        },
+        {
+          "id": "4266",
+          "resource": "change_booking_requests_curated_experiences",
+          "action": "read"
+        },
+        {
+          "id": "4268",
+          "resource": "change_booking_requests_curated_experiences",
+          "action": "reject"
+        },
+        {
+          "id": "4270",
+          "resource": "roles",
+          "action": "create"
+        },
+        {
+          "id": "4272",
+          "resource": "roles",
+          "action": "delete"
+        },
+        {
+          "id": "4275",
+          "resource": "realty_recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4279",
+          "resource": "realty_recommendations",
+          "action": "request"
+        },
+        {
+          "id": "4282",
+          "resource": "curated_experiences_recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4283",
+          "resource": "realty_recommendations",
+          "action": "update"
+        },
+        {
+          "id": "4286",
+          "resource": "curated_experiences_recommendations",
+          "action": "update"
+        },
+        {
+          "id": "4532",
+          "resource": "change_booking_requests_chef",
+          "action": "read"
+        },
+        {
+          "id": "4533",
+          "resource": "change_booking_requests_chef",
+          "action": "reject"
+        },
+        {
+          "id": "4534",
+          "resource": "change_booking_requests_trainer",
+          "action": "read"
+        },
+        {
+          "id": "4535",
+          "resource": "change_booking_requests_trainer",
+          "action": "reject"
+        },
+        {
+          "id": "4536",
+          "resource": "change_booking_requests_tennis_coach",
+          "action": "read"
+        },
+        {
+          "id": "4288",
+          "resource": "booking_requests_events",
+          "action": "read"
+        },
+        {
+          "id": "4290",
+          "resource": "booking_requests_events",
+          "action": "approve"
+        },
+        {
+          "id": "4292",
+          "resource": "crm_event_types",
+          "action": "create"
+        },
+        {
+          "id": "4294",
+          "resource": "crm_event_types",
+          "action": "read"
+        },
+        {
+          "id": "4299",
+          "resource": "travel_recommendations",
+          "action": "request"
+        },
+        {
+          "id": "4302",
+          "resource": "travel_recommendations",
+          "action": "update"
+        },
+        {
+          "id": "4303",
+          "resource": "travel_recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4306",
+          "resource": "booking_requests_dining",
+          "action": "read"
+        },
+        {
+          "id": "4308",
+          "resource": "booking_requests_dining",
+          "action": "reject"
+        },
+        {
+          "id": "4310",
+          "resource": "change_booking_requests_events",
+          "action": "reject"
+        },
+        {
+          "id": "4312",
+          "resource": "permissions",
+          "action": "create"
+        },
+        {
+          "id": "4317",
+          "resource": "crm_events",
+          "action": "delete"
+        },
+        {
+          "id": "4319",
+          "resource": "crm_events",
+          "action": "update"
+        },
+        {
+          "id": "4320",
+          "resource": "change_booking_requests_realty",
+          "action": "reject"
+        },
+        {
+          "id": "4323",
+          "resource": "change_booking_requests_realty",
+          "action": "read"
+        },
+        {
+          "id": "4326",
+          "resource": "users",
+          "action": "create"
+        },
+        {
+          "id": "4327",
+          "resource": "users",
+          "action": "update"
+        },
+        {
+          "id": "4414",
+          "resource": "booking_requests_trainer",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4418",
+          "resource": "booking_requests_travel",
+          "action": "read_own_provider_travel_bookings"
+        },
+        {
+          "id": "4422",
+          "resource": "change_booking_requests_makeup_artist",
+          "action": "approve"
+        },
+        {
+          "id": "4426",
+          "resource": "change_booking_requests_tennis_coach",
+          "action": "approve"
+        },
+        {
+          "id": "4330",
+          "resource": "change_booking_requests_travel",
+          "action": "read"
+        },
+        {
+          "id": "4332",
+          "resource": "events",
+          "action": "create"
+        },
+        {
+          "id": "4337",
+          "resource": "booking_requests_realty",
+          "action": "reject"
+        },
+        {
+          "id": "4339",
+          "resource": "realty_crm_events",
+          "action": "read"
+        },
+        {
+          "id": "4340",
+          "resource": "waitlist_partners",
+          "action": "approve"
+        },
+        {
+          "id": "4344",
+          "resource": "waitlist_partners",
+          "action": "read"
+        },
+        {
+          "id": "4346",
+          "resource": "booking_requests_curated_experiences",
+          "action": "reject"
+        },
+        {
+          "id": "4347",
+          "resource": "booking_requests_curated_experiences",
+          "action": "read"
+        },
+        {
+          "id": "4350",
+          "resource": "users_access",
+          "action": "restore"
+        },
+        {
+          "id": "4352",
+          "resource": "change_booking_requests_dining",
+          "action": "approve"
+        },
+        {
+          "id": "4358",
+          "resource": "booking_requests_architect",
+          "action": "reject"
+        },
+        {
+          "id": "4359",
+          "resource": "booking_requests_architect",
+          "action": "approve"
+        },
+        {
+          "id": "4361",
+          "resource": "analytics",
+          "action": "read"
+        },
+        {
+          "id": "4364",
+          "resource": "booking_requests_architect",
+          "action": "read_own_provider_architect_bookings"
+        },
+        {
+          "id": "4366",
+          "resource": "booking_requests_chef",
+          "action": "read_own_provider_chef_bookings"
+        },
+        {
+          "id": "4367",
+          "resource": "booking_requests_chef",
+          "action": "reject"
+        },
+        {
+          "id": "4370",
+          "resource": "booking_requests_consultant",
+          "action": "read_own_provider_consultant_bookings"
+        },
+        {
+          "id": "4372",
+          "resource": "booking_requests_consultant",
+          "action": "approve"
+        },
+        {
+          "id": "4378",
+          "resource": "booking_requests_events",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4379",
+          "resource": "booking_requests_events",
+          "action": "read_own_provider_events_bookings"
+        },
+        {
+          "id": "4380",
+          "resource": "booking_requests_gardener",
+          "action": "reject"
+        },
+        {
+          "id": "4384",
+          "resource": "booking_requests_gardener",
+          "action": "read"
+        },
+        {
+          "id": "4386",
+          "resource": "booking_requests_lawyer",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4389",
+          "resource": "booking_requests_lawyer",
+          "action": "read_own_provider_lawyer_bookings"
+        },
+        {
+          "id": "4390",
+          "resource": "booking_requests_makeup_artist",
+          "action": "reject"
+        },
+        {
+          "id": "4392",
+          "resource": "booking_requests_makeup_artist",
+          "action": "read"
+        },
+        {
+          "id": "4398",
+          "resource": "booking_requests_stylist",
+          "action": "read_own_provider_stylist_bookings"
+        },
+        {
+          "id": "4399",
+          "resource": "booking_requests_stylist",
+          "action": "read"
+        },
+        {
+          "id": "4400",
+          "resource": "booking_requests_stylist",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4430",
+          "resource": "curated_experiences_recommendations",
+          "action": "request"
+        },
+        {
+          "id": "4204",
+          "resource": "dining_recommendations",
+          "action": "create"
+        },
+        {
+          "id": "4209",
+          "resource": "events_recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4214",
+          "resource": "master_users",
+          "action": "read_own_therapist"
+        },
+        {
+          "id": "4219",
+          "resource": "master_users",
+          "action": "create_admin_chef"
+        },
+        {
+          "id": "4223",
+          "resource": "master_users",
+          "action": "review_gardener"
+        },
+        {
+          "id": "4228",
+          "resource": "master_users",
+          "action": "review_architect"
+        },
+        {
+          "id": "4233",
+          "resource": "master_users",
+          "action": "create_consultant"
+        },
+        {
+          "id": "4238",
+          "resource": "master_users",
+          "action": "create_lawyer"
+        },
+        {
+          "id": "4243",
+          "resource": "master_users",
+          "action": "read_lawyer"
+        },
+        {
+          "id": "4246",
+          "resource": "master_users",
+          "action": "create_admin_gardener"
+        },
+        {
+          "id": "4248",
+          "resource": "master_users",
+          "action": "create_admin_architect"
+        },
+        {
+          "id": "4251",
+          "resource": "master_users",
+          "action": "read_own_stylist"
+        },
+        {
+          "id": "4255",
+          "resource": "master_users",
+          "action": "review_chef"
+        },
+        {
+          "id": "4258",
+          "resource": "master_users",
+          "action": "create_admin_lawyer"
+        },
+        {
+          "id": "4263",
+          "resource": "master_users",
+          "action": "review"
+        },
+        {
+          "id": "4267",
+          "resource": "change_booking_requests_curated_experiences",
+          "action": "approve"
+        },
+        {
+          "id": "4269",
+          "resource": "roles",
+          "action": "update"
+        },
+        {
+          "id": "4273",
+          "resource": "waitlist_users",
+          "action": "read"
+        },
+        {
+          "id": "4277",
+          "resource": "realty_recommendations",
+          "action": "delete"
+        },
+        {
+          "id": "4280",
+          "resource": "realty_recommendations",
+          "action": "review"
+        },
+        {
+          "id": "4281",
+          "resource": "realty_recommendations",
+          "action": "visibility"
+        },
+        {
+          "id": "4287",
+          "resource": "curated_experiences_recommendations",
+          "action": "visibility"
+        },
+        {
+          "id": "4289",
+          "resource": "booking_requests_events",
+          "action": "reject"
+        },
+        {
+          "id": "4293",
+          "resource": "transport",
+          "action": "create"
+        },
+        {
+          "id": "4298",
+          "resource": "transport",
+          "action": "read"
+        },
+        {
+          "id": "4300",
+          "resource": "travel_recommendations",
+          "action": "create"
+        },
+        {
+          "id": "4301",
+          "resource": "travel_recommendations",
+          "action": "delete"
+        },
+        {
+          "id": "4307",
+          "resource": "booking_requests_dining",
+          "action": "approve"
+        },
+        {
+          "id": "4309",
+          "resource": "change_booking_requests_events",
+          "action": "approve"
+        },
+        {
+          "id": "4313",
+          "resource": "permissions",
+          "action": "update"
+        },
+        {
+          "id": "4316",
+          "resource": "crm_events",
+          "action": "read"
+        },
+        {
+          "id": "4321",
+          "resource": "change_booking_requests_realty",
+          "action": "approve"
+        },
+        {
+          "id": "4322",
+          "resource": "partners_access",
+          "action": "revoke"
+        },
+        {
+          "id": "4328",
+          "resource": "users",
+          "action": "read"
+        },
+        {
+          "id": "4329",
+          "resource": "change_booking_requests_travel",
+          "action": "reject"
+        },
+        {
+          "id": "4333",
+          "resource": "events",
+          "action": "read"
+        },
+        {
+          "id": "4336",
+          "resource": "booking_requests_realty",
+          "action": "read"
+        },
+        {
+          "id": "4341",
+          "resource": "partners",
+          "action": "update"
+        },
+        {
+          "id": "4342",
+          "resource": "waitlist_partners",
+          "action": "reject"
+        },
+        {
+          "id": "4348",
+          "resource": "booking_requests_curated_experiences",
+          "action": "approve"
+        },
+        {
+          "id": "4349",
+          "resource": "users_access",
+          "action": "revoke"
+        },
+        {
+          "id": "4354",
+          "resource": "booking_requests_travel",
+          "action": "reject"
+        },
+        {
+          "id": "4356",
+          "resource": "booking_requests_travel",
+          "action": "read"
+        },
+        {
+          "id": "4360",
+          "resource": "booking_requests_architect",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4363",
+          "resource": "users_roles",
+          "action": "assign"
+        },
+        {
+          "id": "4368",
+          "resource": "booking_requests_consultant",
+          "action": "reject"
+        },
+        {
+          "id": "4369",
+          "resource": "booking_requests_chef",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4374",
+          "resource": "booking_requests_curated_experiences",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4377",
+          "resource": "booking_requests_dining",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4381",
+          "resource": "booking_requests_gardener",
+          "action": "read_own_provider_gardener_bookings"
+        },
+        {
+          "id": "4382",
+          "resource": "booking_requests_gardener",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4387",
+          "resource": "booking_requests_lawyer",
+          "action": "reject"
+        },
+        {
+          "id": "4388",
+          "resource": "booking_requests_lawyer",
+          "action": "read"
+        },
+        {
+          "id": "4393",
+          "resource": "booking_requests_makeup_artist",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4397",
+          "resource": "booking_requests_stylist",
+          "action": "reject"
+        },
+        {
+          "id": "4401",
+          "resource": "booking_requests_stylist",
+          "action": "approve"
+        },
+        {
+          "id": "4402",
+          "resource": "booking_requests_tennis_coach",
+          "action": "reject"
+        },
+        {
+          "id": "4404",
+          "resource": "booking_requests_tennis_coach",
+          "action": "read"
+        },
+        {
+          "id": "4405",
+          "resource": "booking_requests_tennis_coach",
+          "action": "approve"
+        },
+        {
+          "id": "4408",
+          "resource": "booking_requests_therapist",
+          "action": "read_own_provider_therapist_bookings"
+        },
+        {
+          "id": "4409",
+          "resource": "booking_requests_therapist",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4412",
+          "resource": "booking_requests_trainer",
+          "action": "reject"
+        },
+        {
+          "id": "4413",
+          "resource": "booking_requests_trainer",
+          "action": "read_own_provider_trainer_bookings"
+        },
+        {
+          "id": "4415",
+          "resource": "booking_requests_trainer",
+          "action": "approve"
+        },
+        {
+          "id": "4419",
+          "resource": "change_booking_requests_architect",
+          "action": "approve"
+        },
+        {
+          "id": "4423",
+          "resource": "change_booking_requests_gardener",
+          "action": "approve"
+        },
+        {
+          "id": "4427",
+          "resource": "change_booking_requests_therapist",
+          "action": "approve"
+        },
+        {
+          "id": "4431",
+          "resource": "curated_experiences_recommendations",
+          "action": "read_own_provider_curated_experiences"
+        },
+        {
+          "id": "4434",
+          "resource": "dining_recommendations",
+          "action": "read_own_provider_dining"
+        },
+        {
+          "id": "4435",
+          "resource": "kyc_verifications",
+          "action": "approve"
+        },
+        {
+          "id": "4439",
+          "resource": "realty_recommendations",
+          "action": "read_own_provider_realty"
+        },
+        {
+          "id": "4537",
+          "resource": "change_booking_requests_tennis_coach",
+          "action": "reject"
+        },
+        {
+          "id": "4538",
+          "resource": "change_booking_requests_therapist",
+          "action": "read"
+        },
+        {
+          "id": "4539",
+          "resource": "change_booking_requests_therapist",
+          "action": "reject"
+        },
+        {
+          "id": "4540",
+          "resource": "change_booking_requests_consultant",
+          "action": "read"
+        },
+        {
+          "id": "4541",
+          "resource": "change_booking_requests_consultant",
+          "action": "reject"
+        },
+        {
+          "id": "4542",
+          "resource": "change_booking_requests_gardener",
+          "action": "read"
+        },
+        {
+          "id": "4416",
+          "resource": "booking_requests_travel",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4420",
+          "resource": "change_booking_requests_consultant",
+          "action": "approve"
+        },
+        {
+          "id": "4424",
+          "resource": "change_booking_requests_lawyer",
+          "action": "approve"
+        },
+        {
+          "id": "4428",
+          "resource": "change_booking_requests_trainer",
+          "action": "approve"
+        },
+        {
+          "id": "4432",
+          "resource": "dining_recommendations",
+          "action": "review"
+        },
+        {
+          "id": "4436",
+          "resource": "kyc_verifications",
+          "action": "read"
+        },
+        {
+          "id": "4438",
+          "resource": "events_recommendations",
+          "action": "read_own_provider_events"
+        },
+        {
+          "id": "4440",
+          "resource": "recommendations",
+          "action": "read"
+        },
+        {
+          "id": "4543",
+          "resource": "change_booking_requests_gardener",
+          "action": "reject"
+        },
+        {
+          "id": "4544",
+          "resource": "change_booking_requests_stylist",
+          "action": "read"
+        },
+        {
+          "id": "4545",
+          "resource": "change_booking_requests_stylist",
+          "action": "reject"
+        },
+        {
+          "id": "4546",
+          "resource": "change_booking_requests_makeup_artist",
+          "action": "read"
+        },
+        {
+          "id": "4547",
+          "resource": "change_booking_requests_makeup_artist",
+          "action": "reject"
+        },
+        {
+          "id": "4548",
+          "resource": "change_booking_requests_architect",
+          "action": "read"
+        },
+        {
+          "id": "4549",
+          "resource": "change_booking_requests_architect",
+          "action": "reject"
+        },
+        {
+          "id": "4550",
+          "resource": "change_booking_requests_lawyer",
+          "action": "read"
+        },
+        {
+          "id": "4551",
+          "resource": "change_booking_requests_lawyer",
+          "action": "reject"
+        },
+        {
+          "id": "4552",
+          "resource": "support_tickets",
+          "action": "read"
+        },
+        {
+          "id": "4553",
+          "resource": "support_tickets",
+          "action": "write"
+        },
+        {
+          "id": "4205",
+          "resource": "dining_recommendations",
+          "action": "update"
+        },
+        {
+          "id": "4210",
+          "resource": "events_recommendations",
+          "action": "update"
+        },
+        {
+          "id": "4215",
+          "resource": "master_users",
+          "action": "read_architect"
+        },
+        {
+          "id": "4220",
+          "resource": "master_users",
+          "action": "create_stylist"
+        },
+        {
+          "id": "4225",
+          "resource": "master_users",
+          "action": "review_therapist"
+        },
+        {
+          "id": "4230",
+          "resource": "master_users",
+          "action": "read_own_chef"
+        },
+        {
+          "id": "4235",
+          "resource": "master_users",
+          "action": "review_tennis_coach"
+        },
+        {
+          "id": "4240",
+          "resource": "master_users",
+          "action": "create_tennis_coach"
+        },
+        {
+          "id": "4244",
+          "resource": "master_users",
+          "action": "create_admin_consultant"
+        },
+        {
+          "id": "4249",
+          "resource": "master_users",
+          "action": "read"
+        },
+        {
+          "id": "4252",
+          "resource": "master_users",
+          "action": "read_tennis_coach"
+        },
+        {
+          "id": "4254",
+          "resource": "master_users",
+          "action": "read_therapist"
+        },
+        {
+          "id": "4256",
+          "resource": "master_users",
+          "action": "create_trainer"
+        },
+        {
+          "id": "4260",
+          "resource": "master_users",
+          "action": "create_admin_makeup_artist"
+        },
+        {
+          "id": "4265",
+          "resource": "master_users",
+          "action": "read_trainer"
+        },
+        {
+          "id": "4271",
+          "resource": "roles",
+          "action": "read"
+        },
+        {
+          "id": "4274",
+          "resource": "waitlist_users",
+          "action": "approve"
+        },
+        {
+          "id": "4276",
+          "resource": "waitlist_users",
+          "action": "reject"
+        },
+        {
+          "id": "4278",
+          "resource": "realty_recommendations",
+          "action": "create"
+        },
+        {
+          "id": "4284",
+          "resource": "curated_experiences_recommendations",
+          "action": "delete"
+        },
+        {
+          "id": "4285",
+          "resource": "curated_experiences_recommendations",
+          "action": "create"
+        },
+        {
+          "id": "4291",
+          "resource": "crm_event_types",
+          "action": "update"
+        },
+        {
+          "id": "4295",
+          "resource": "transport",
+          "action": "update"
+        },
+        {
+          "id": "4417",
+          "resource": "booking_requests_trainer",
+          "action": "read"
+        },
+        {
+          "id": "4421",
+          "resource": "change_booking_requests_chef",
+          "action": "approve"
+        },
+        {
+          "id": "4425",
+          "resource": "change_booking_requests_stylist",
+          "action": "approve"
+        },
+        {
+          "id": "4429",
+          "resource": "curated_experiences_recommendations",
+          "action": "review"
+        },
+        {
+          "id": "4433",
+          "resource": "dining_recommendations",
+          "action": "request"
+        },
+        {
+          "id": "4437",
+          "resource": "kyc_verifications",
+          "action": "update"
+        },
+        {
+          "id": "4441",
+          "resource": "travel_recommendations",
+          "action": "read_own_provider_travel"
+        },
+        {
+          "id": "4296",
+          "resource": "crm_event_types",
+          "action": "delete"
+        },
+        {
+          "id": "4297",
+          "resource": "transport",
+          "action": "delete"
+        },
+        {
+          "id": "4304",
+          "resource": "travel_recommendations",
+          "action": "review"
+        },
+        {
+          "id": "4305",
+          "resource": "travel_recommendations",
+          "action": "visibility"
+        },
+        {
+          "id": "4311",
+          "resource": "change_booking_requests_events",
+          "action": "read"
+        },
+        {
+          "id": "4314",
+          "resource": "crm_events",
+          "action": "create"
+        },
+        {
+          "id": "4315",
+          "resource": "permissions",
+          "action": "delete"
+        },
+        {
+          "id": "4318",
+          "resource": "permissions",
+          "action": "read"
+        },
+        {
+          "id": "4324",
+          "resource": "partners_access",
+          "action": "restore"
+        },
+        {
+          "id": "4325",
+          "resource": "users",
+          "action": "delete"
+        },
+        {
+          "id": "4331",
+          "resource": "change_booking_requests_travel",
+          "action": "approve"
+        },
+        {
+          "id": "4334",
+          "resource": "events",
+          "action": "delete"
+        },
+        {
+          "id": "4335",
+          "resource": "events",
+          "action": "update"
+        },
+        {
+          "id": "4338",
+          "resource": "booking_requests_realty",
+          "action": "approve"
+        },
+        {
+          "id": "4343",
+          "resource": "partners",
+          "action": "create"
+        },
+        {
+          "id": "4345",
+          "resource": "partners",
+          "action": "read"
+        },
+        {
+          "id": "4351",
+          "resource": "change_booking_requests_dining",
+          "action": "reject"
+        },
+        {
+          "id": "4353",
+          "resource": "change_booking_requests_dining",
+          "action": "read"
+        },
+        {
+          "id": "4355",
+          "resource": "booking_requests_travel",
+          "action": "approve"
+        },
+        {
+          "id": "4357",
+          "resource": "booking_requests_architect",
+          "action": "read"
+        },
+        {
+          "id": "4362",
+          "resource": "booking_requests_chef",
+          "action": "approve"
+        },
+        {
+          "id": "4365",
+          "resource": "booking_requests_chef",
+          "action": "read"
+        },
+        {
+          "id": "4371",
+          "resource": "booking_requests_consultant",
+          "action": "read"
+        },
+        {
+          "id": "4373",
+          "resource": "booking_requests_consultant",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4375",
+          "resource": "booking_requests_curated_experiences",
+          "action": "read_own_provider_curated_experiences_bookings"
+        },
+        {
+          "id": "4376",
+          "resource": "booking_requests_dining",
+          "action": "read_own_provider_dining_bookings"
+        },
+        {
+          "id": "4383",
+          "resource": "booking_requests_gardener",
+          "action": "approve"
+        },
+        {
+          "id": "4385",
+          "resource": "booking_requests_lawyer",
+          "action": "approve"
+        },
+        {
+          "id": "4391",
+          "resource": "booking_requests_makeup_artist",
+          "action": "read_own_provider_makeup_artist_bookings"
+        },
+        {
+          "id": "4394",
+          "resource": "booking_requests_realty",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4395",
+          "resource": "booking_requests_makeup_artist",
+          "action": "approve"
+        },
+        {
+          "id": "4396",
+          "resource": "booking_requests_realty",
+          "action": "read_own_provider_realty_bookings"
+        },
+        {
+          "id": "4403",
+          "resource": "booking_requests_tennis_coach",
+          "action": "read_own_provider_tennis_coach_bookings"
+        },
+        {
+          "id": "4406",
+          "resource": "booking_requests_tennis_coach",
+          "action": "create_on_behalf"
+        },
+        {
+          "id": "4407",
+          "resource": "booking_requests_therapist",
+          "action": "reject"
+        },
+        {
+          "id": "4410",
+          "resource": "booking_requests_therapist",
+          "action": "read"
+        },
+        {
+          "id": "4411",
+          "resource": "booking_requests_therapist",
+          "action": "approve"
+        }
+      ]
+    },
+    "rbac": {
+      "permissions": [
+        {
+          "resource": "analytics",
+          "actions": [
+            "read"
+          ]
+        },
+        {
+          "resource": "booking_requests_architect",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_architect_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_chef",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_chef_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_consultant",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_consultant_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_curated_experiences",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_curated_experiences_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_dining",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_dining_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_events",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_events_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_gardener",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_gardener_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_lawyer",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_lawyer_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_makeup_artist",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_makeup_artist_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_realty",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_realty_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_stylist",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_stylist_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_tennis_coach",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_tennis_coach_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_therapist",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_therapist_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_trainer",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_trainer_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "booking_requests_travel",
+          "actions": [
+            "approve",
+            "create_on_behalf",
+            "read",
+            "read_own_provider_travel_bookings",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_architect",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_chef",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_consultant",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_curated_experiences",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_dining",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_events",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_gardener",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_lawyer",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_makeup_artist",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_realty",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_stylist",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_tennis_coach",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_therapist",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_trainer",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "change_booking_requests_travel",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "crm_event_types",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "crm_events",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "curated_experiences_recommendations",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "read_own_provider_curated_experiences",
+            "request",
+            "review",
+            "update",
+            "visibility"
+          ]
+        },
+        {
+          "resource": "dining_recommendations",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "read_own_provider_dining",
+            "request",
+            "review",
+            "update",
+            "visibility"
+          ]
+        },
+        {
+          "resource": "events",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "events_recommendations",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "read_own_provider_events",
+            "request",
+            "review",
+            "update",
+            "visibility"
+          ]
+        },
+        {
+          "resource": "kyc_verifications",
+          "actions": [
+            "approve",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "master_users",
+          "actions": [
+            "create_admin_architect",
+            "create_admin_chef",
+            "create_admin_consultant",
+            "create_admin_gardener",
+            "create_admin_lawyer",
+            "create_admin_makeup_artist",
+            "create_admin_stylist",
+            "create_admin_tennis_coach",
+            "create_admin_therapist",
+            "create_admin_trainer",
+            "create_architect",
+            "create_chef",
+            "create_consultant",
+            "create_gardener",
+            "create_lawyer",
+            "create_makeup_artist",
+            "create_stylist",
+            "create_tennis_coach",
+            "create_therapist",
+            "create_trainer",
+            "read",
+            "read_architect",
+            "read_chef",
+            "read_consultant",
+            "read_gardener",
+            "read_lawyer",
+            "read_makeup_artist",
+            "read_own_architect",
+            "read_own_chef",
+            "read_own_consultant",
+            "read_own_gardener",
+            "read_own_lawyer",
+            "read_own_makeup_artist",
+            "read_own_stylist",
+            "read_own_tennis_coach",
+            "read_own_therapist",
+            "read_own_trainer",
+            "read_stylist",
+            "read_tennis_coach",
+            "read_therapist",
+            "read_trainer",
+            "review",
+            "review_architect",
+            "review_chef",
+            "review_consultant",
+            "review_gardener",
+            "review_lawyer",
+            "review_makeup_artist",
+            "review_stylist",
+            "review_tennis_coach",
+            "review_therapist",
+            "review_trainer"
+          ]
+        },
+        {
+          "resource": "partners",
+          "actions": [
+            "create",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "partners_access",
+          "actions": [
+            "restore",
+            "revoke"
+          ]
+        },
+        {
+          "resource": "permissions",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "realty_crm_events",
+          "actions": [
+            "read"
+          ]
+        },
+        {
+          "resource": "realty_recommendations",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "read_own_provider_realty",
+            "request",
+            "review",
+            "update",
+            "visibility"
+          ]
+        },
+        {
+          "resource": "recommendations",
+          "actions": [
+            "read"
+          ]
+        },
+        {
+          "resource": "roles",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "support_tickets",
+          "actions": [
+            "read",
+            "write"
+          ]
+        },
+        {
+          "resource": "transport",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "travel_recommendations",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "read_own_provider_travel",
+            "request",
+            "review",
+            "update",
+            "visibility"
+          ]
+        },
+        {
+          "resource": "users",
+          "actions": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        },
+        {
+          "resource": "users_access",
+          "actions": [
+            "restore",
+            "revoke"
+          ]
+        },
+        {
+          "resource": "users_roles",
+          "actions": [
+            "assign"
+          ]
+        },
+        {
+          "resource": "waitlist_partners",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        },
+        {
+          "resource": "waitlist_users",
+          "actions": [
+            "approve",
+            "read",
+            "reject"
+          ]
+        }
+      ]
+    },
+    "sessionId": "464",
+    "cognitoTokens": {
+      "accessToken": "eyJraWQiOiJtXC9pU2Q1UzJUYU5CQ2JZazVuSUd4M2dhdEQ3citBeXEyM1FFWTBxOUVWOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAubWUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL21lLWNlbnRyYWwtMV9JQklMSUNqWnAiLCJjbGllbnRfaWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsIm9yaWdpbl9qdGkiOiI1MDU4MGUwZS1jNjMyLTQyMTctOWY5ZC1kNDg5YzI4MGRkYmEiLCJldmVudF9pZCI6Ijk0ZDg2ZWNhLTQ3MWMtNDc2MC1hZjVlLTUzYzM0ZjdjNjBhZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NzE0MTA5NzEsImV4cCI6MTc3MTQxNDU3MSwiaWF0IjoxNzcxNDEwOTcxLCJqdGkiOiJhOTA3MjhkNi0wMzFiLTQ2YzItODRiMS1jODNhMzg2ZTU2NjkiLCJ1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSJ9.hjWwAW2O257xgZIfypu0YyQz76rYjhu7sYguCPi3ZrNA2NMKGrlg_dwQdbne8iKQkubWEE1jSVMP_kOni8hKiXXb51gOvLoYvUj0IhHMBvY7tdIBiBsko9eFB9CWEknu__xkOVaL1LALQkH63KaYWcx9CDnPLv0ByXQw-BLcl14fxz-Aazz2GJjHOd--7uC35XGKfhVwTxqQEJNSar8QAe_NJyIj_LBEGzq7ViIIw7n0Ta4cyASP64A3oXhPMb4zgU8HEhsqkx5-vs2c39Hwz4yT56MOiwiX0usmIigB7vOsufP4fKwN9Y1Me1503uQLlHR7NfMj9ifU_68KUa-vyw",
+      "idToken": "eyJraWQiOiJYdjZKemNKUW9RTTlJbUtrNmRPVGVwUzRYU01uYlR0b0o2SmVJbkN6bktNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLm1lLWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9tZS1jZW50cmFsLTFfSUJJTElDalpwIiwiY29nbml0bzp1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSIsIm9yaWdpbl9qdGkiOiI1MDU4MGUwZS1jNjMyLTQyMTctOWY5ZC1kNDg5YzI4MGRkYmEiLCJhdWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsImV2ZW50X2lkIjoiOTRkODZlY2EtNDcxYy00NzYwLWFmNWUtNTNjMzRmN2M2MGFkIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3NzE0MTA5NzEsIm5hbWUiOiJqYWdhZGVlc2giLCJwaG9uZV9udW1iZXIiOiIrOTcxNzA5NTI5NzI3NSIsImV4cCI6MTc3MTQxNDU3MSwiaWF0IjoxNzcxNDEwOTcxLCJqdGkiOiJiMWU2NGIwNy1hMGI0LTQxNjgtYTYwYy04YzhhOTZmMGQ2Y2EiLCJlbWFpbCI6ImphZ2FkZWVzd2FyYTg5QGdtYWlsLmNvbSJ9.VoiXkgAVuoYa0mjaeTFvDP_mdDHLAojf0qw3kK93-vUJKy5n39cfHOZUWxN-un0YLuDs8nDNyn1cRKEoaqg2dN2_HcRdoPr4PMaJypAMARjUg2aeTJmk-uA0zG_amDKJ7EYYmBtHcBMEQIm8zgVGB53eHMlRfPi-_HoOcBLekJseB5Atc8I57qW5lFkRa2kf9aXT5kQ6Z9DWc5Fk0xH4LJB9OaMrif4XukARELVif16CjE4REPEUp6XrwTLIqoAoRNds1yM77SHRK77lFVT2cv0Ex0WZkjkOahigAx5C7_rUxmXT8JOV9Jdrp5qVwC_PJewE608e7NKfpb6Oy-uOdQ",
+      "refreshToken": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.uSktLnCBRtOR6IbjibyYOuv6VqxvRHPuafPkOjc4ZQGAJAUCm9BAF9uVNxgLeKtcq1dEUm4llaX_INDu6bLfU-nk9Sacrp1zg-VWoGq3S6ae5bk6TnyV8a-e7zayCr-Z9F4r4_fg4qVqyZBH2JYbUCbXj07Ruh4_hnfl9QRmjPRFjKK0gvKaccNAEVgjshxdohY4Dxr5Xc3qGXjZUGyTS-3Rn_-hsfqIvND0Mao9ZAcq499HW_giplNBF9nJXMsSSSUa3YV6wGiDddQ1GcL79F_jTf2mSIzvT1EeGfmSUOAp00jwcWVfhXIOAQVG4YajMf1HHHY-tpTieMBHlrovhg.Wa31tc4bXD2vH2-F.iFLoyL5OGPAzpDdmsZ803Ya9NptHkrRJYMSla-T3_dVsUvE1rJYxApczDRK-Bb_vMDFlAcvP7hHBMW5kloK4O22ex-6bAjDoOtFsRIIlntjkAAdt_ozprpL_V_--NqCqX7_FTKi0T0fCFz_Wgpdg5X-C8sfkhf7l4T2ZeA_eHsWmtnyrjXhDfDcbclqGqkez4T6KrkL9vZ7GpDUDhHQQyqsjacuLGV2s6bhhLRMmBWBCPEpJY_-68PX9mENutg2yv9GJatQXM88F9DHTUnah-8Stq14likIaa_sNIgH9vfGptZxekUD-1oHF8jJxjTAmzwKuPnXJPBQ6KwYDCq14y-7Ncz-ZCsGKYyJRzhCE2ELkg6Ne_F_fR0zQSIvjDkG5ZuWtQJnvJ-Jmg_UDAlFqUlPeoIw2i4LaQ6pvfSWZD35-ysnT4AS_AhWu4fXkCyEwmY7SZrVazDoFTtcMpE9JAOhpmrUT6rlLioNRh4MBUqAHKqZW10TSMPJdH0BrXAMeqVrbVI7WdPD3aqBf8qjC-4OS4s2G-A5sr22pfDaI0tMZN45qr87zQEeq3YqZVFB1-NeCfWg1SUxX26go8mXmP8xGe03JaaiDvfPzZW3Fp5D924tm7G-xF4JDnWFJn9GoVnEEKxEaz0vM-2Cl2aH_IfNB9FT4R6tPE4vaO_hOvFipHl5UIQk2CP7qKac2gofQnFxCshmIxSzmWD-wJnNRDbkW5o-gJsJyrHnA3ZImZFTJ4r9JSUaTZzVYRn4bPuAqLXKhjlkBTLBhktK-IGLbtTcmBanI-inL9iKSHxOeNq9UoPMZpzNVYiu7v4P5t-d1ipFXHL7mk3JhtbjLIPsXNU-rOx26LEi--oEjGyRA9kdyWpqVcGjnjmvOup55LV-tcAXKsyNjnv1Gtt3RSj20x_zt4lRi1rMQpV8jIkeSS0Nyn3fJb6wjcGvTk7IYc99rVdMFecrEiUZOKLDKFm0zZG1poC2CMB8u_CK1abl5mhu3CWhsf2ZSb_9ata0j8qoyK5koPNWI0W_j0iskaNi2FnjNoZo-kWmm5xnoN83rGwXbXcVkOB6cVMoJx0MOhf4MYtQr0XZiAQsR99WF3PxE0iTn9S46bxEpd8-zUmN8Omt9k3e0TEi1T6P_zUe04HasagmljKSqA5FQWvaFJucQC0BI8rXXMpswxLKfOEwF9z02cB8uuyHapmVGTxqHlpRAdEuA77iw7_FyAU3-hR9rvdB53ek8cHAFkL5wi1b4FjLGlb2jbJJ6vtdBsyiN8xFWL8fROKXa90p44H1WJn169i4FUZLJyFS9ZryxXei-bJogKil5UI-V2KB-HUZrONwjza_m.1Te8LDGZETaFblreRLQCSw",
+      "tokenType": "Bearer",
+      "expiresIn": 3600
+    }
+  }
+}

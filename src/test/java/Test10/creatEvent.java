@@ -1,10 +1,17 @@
 package Test10;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,223 +21,240 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class creatEvent {
-	
-	
+
 	public static void main(String[] args) throws Exception {
-		
-		   WebDriverManager.chromedriver().setup();
-		   ChromeDriver driver= new ChromeDriver();
-		   driver.get("https://crmdev.miftah.ai/dashboard/");
-	       driver.manage().window().maximize();
-	       driver.findElement(By.id("email")).sendKeys("jagadeeswara89@gmail.com");
-	       Thread.sleep(3000);
-	       driver.findElement(By.id("password")).sendKeys("Jaggu@89");
-	       driver.findElement(By.xpath("//button[text()='Login']")).click();
-	       
-	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-	       By miftahBtn = By.xpath("//span[normalize-space()='Miftah Recommendations']/ancestor::button");
+		WebDriverManager.chromedriver().setup();
 
-	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(miftahBtn));
-	       element.click();
-	      
-	       Thread.sleep(5000);
-	       
-	       driver.findElement(By.xpath("//button[contains(@class,'group p-2')]")).click();
-	
-	       driver.findElement(By.xpath("//p[text()='Events']/following-sibling::p")).click();
-	
-	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[1]")).sendKeys("EveDubai");
-	       
-	       driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[2]")).sendKeys("5");
-	
-	       Select currency = new Select(driver.findElement(
-	    		    By.xpath("(//select[contains(@class,'w-full px-3')])[1]")
-	    		));
+		int totalScenarios = 0;
+		int passedCount = 0;
+		int failedCount = 0;
+		List<String> passedScenariosNames = new ArrayList<>();
+		List<String> failedScenariosNames = new ArrayList<>();
+		List<String> detailedLogs = new ArrayList<>();
+		List<EventData.EventScenario> scenarios = EventData.getScenarios();
+		totalScenarios = scenarios.size();
 
-	    		currency.selectByIndex(12);  // INR (index starts from 0)
-	
-	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[1]")).sendKeys("description");
-	
-	    		driver.findElement(By.xpath("//input[@placeholder='Enter location']")).sendKeys("Dubai");
-	    		
-	    		driver.findElement(By.xpath("//input[@placeholder='Enter city']")).sendKeys("Dubai");
-	
-	    		driver.findElement(By.xpath("//input[@placeholder='contact@example.com']")).sendKeys("jagadeesh7275@gmail.com");
-	    		
-	    		// 1. Click country code dropdown
-	    		By countryDropdown = By.xpath("//button[.//span[normalize-space()='+971']]");
-	    		wait.until(ExpectedConditions.elementToBeClickable(countryDropdown)).click();
+		for (EventData.EventScenario scenario : scenarios) {
+			System.out.println("\n--- Executing Scenario: " + scenario.scenarioName + " ---");
+			ChromeDriver driver = new ChromeDriver();
+			try {
+				driver.get("https://crmdev.miftah.ai/dashboard/");
+				driver.manage().window().maximize();
 
-	    		// 2. Click India +91
-	    		By indiaCode = By.xpath("//*[contains(text(),'+91')]");
-	    		wait.until(ExpectedConditions.elementToBeClickable(indiaCode)).click();
-	    		
-	    		driver.findElement(By.xpath("(//label[normalize-space(text())='Contact Phone']/following::input)[1]")).sendKeys("9876543211");
-	    		
-	    		
-	    		driver.findElement(By.xpath("//input[@placeholder='Enter contact person name']")).sendKeys("jagadeesh");
-	    		// COVER IMAGE INPUT (FIRST)
-	    		WebElement coverInput = wait.until(
-	    		    ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[1]"))
-	    		);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-	    		((JavascriptExecutor) driver).executeScript(
-	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
-	    		    coverInput
-	    		);
+				// Login
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")))
+						.sendKeys("jagadeeswara89@gmail.com");
+				driver.findElement(By.id("password")).sendKeys("Jaggu@89");
+				driver.findElement(By.xpath("//button[text()='Login']")).click();
 
-	    		String coverPath = "C:\\Users\\NS\\Desktop\\images\\download (3).jpg";
-	    		coverInput.sendKeys(coverPath);
+				// Navigate
+				By miftahBtn = By.xpath("//span[normalize-space()='Miftah Recommendations']/ancestor::button");
+				wait.until(ExpectedConditions.elementToBeClickable(miftahBtn)).click();
+				Thread.sleep(3000);
 
-	    
-	
-	    		Thread.sleep(5000);
-	
-	
-	    		// ADDITIONAL IMAGES INPUT (SECOND)
-	    		WebElement additionalInput = wait.until(
-	    		    ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[2]"))
-	    		);
+				WebElement addBtnNav = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'group p-2')]")));
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", addBtnNav);
 
-	    		((JavascriptExecutor) driver).executeScript(
-	    		    "arguments[0].style.display='block'; arguments[0].style.visibility='visible';", 
-	    		    additionalInput
-	    		);
+				WebElement eventBtn = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='Events']/following-sibling::p")));
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", eventBtn);
 
-	    		// Folder
-	    		File folder = new File("C:\\Users\\NS\\Desktop\\images");
-	    		File[] files = folder.listFiles();
+				// Basic Information
+				wait.until(ExpectedConditions
+						.presenceOfElementLocated(By.xpath("(//input[contains(@class,'w-full px-3')])[1]")))
+						.sendKeys(scenario.title);
+				driver.findElement(By.xpath("(//input[contains(@class,'w-full px-3')])[2]")).sendKeys(scenario.stars);
 
-	    		for (File f : files) {
+				Select currency = new Select(
+						driver.findElement(By.xpath("(//select[contains(@class,'w-full px-3')])[1]")));
+				currency.selectByIndex(12); // INR
 
-	    		    if (f.isFile()) {
+				driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[1]"))
+						.sendKeys(scenario.description);
+				driver.findElement(By.xpath("//input[@placeholder='Enter location']")).sendKeys(scenario.location);
+				driver.findElement(By.xpath("//input[@placeholder='Enter city']")).sendKeys(scenario.city);
+				driver.findElement(By.xpath("//input[@placeholder='contact@example.com']"))
+						.sendKeys(scenario.contactEmail);
 
-	    		        System.out.println("Uploading additional: " + f.getName());
+				// Country Code
+				By countryDropdown = By.xpath("//button[.//span[normalize-space()='+971']]");
+				wait.until(ExpectedConditions.elementToBeClickable(countryDropdown)).click();
+				By indiaCode = By.xpath("//*[contains(text(),'+91')]");
+				wait.until(ExpectedConditions.elementToBeClickable(indiaCode)).click();
 
-	    		        additionalInput.sendKeys(f.getAbsolutePath());
+				driver.findElement(By.xpath("(//label[normalize-space(text())='Contact Phone']/following::input)[1]"))
+						.sendKeys(scenario.contactPhone);
+				driver.findElement(By.xpath("//input[@placeholder='Enter contact person name']"))
+						.sendKeys(scenario.contactPerson);
 
-	    		        Thread.sleep(2000);
+				// --- IMAGES UPLOAD (Batch) ---
+				File imgDir = new File("C:\\Users\\NS\\Desktop\\images");
+				File[] images = imgDir.listFiles();
 
-	    		        // Re-locate input (site refreshes it)
-	    		        additionalInput = wait.until(
-	    		            ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[2]"))
-	    		        );
-	    		    }
-	    		}
-	    		
-	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[2]")).sendKeys("<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1107029.2201364434!2d54.568041327437584!3d25.0745656650172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1769164419591!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>");
-               
-	    		driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[3]")).sendKeys("Directions");
-	    		
-	    		driver.findElement(By.name("term_and_conditions")).sendKeys("Terms and conditions");
-	    		
-	    		driver.findElement(By.name("age_policy")).sendKeys("Age policy");
-	    		
-	    		driver.findElement(By.name("cancellation_policy")).sendKeys("Cancellation policy"); 
-	    
-	    		driver.findElement(By.name("leadTime")).sendKeys("3.5");
-	    		
-	    		// 1️⃣ Enter meta data
-	    		WebElement metaInput = wait.until(
-	    		    ExpectedConditions.elementToBeClickable(
-	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')])[1]")
-	    		    )
-	    		);
+				// Cover Image
+				WebElement coverInput = wait.until(
+						ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[1]")));
+				((JavascriptExecutor) driver).executeScript(
+						"arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].style.opacity='1';",
+						coverInput);
+				if (images != null && images.length > 0) {
+					coverInput.sendKeys(images[0].getAbsolutePath());
+				}
 
-	    		metaInput.clear();
-	    		metaInput.sendKeys("selenium, automation, testing");
+				Thread.sleep(2000);
 
-	    		// 2️⃣ Click Add button
-	    		WebElement addButton = wait.until(
-	    		    ExpectedConditions.elementToBeClickable(
-	    		        By.xpath("//button[normalize-space()='Add']")
-	    		    )
-	    		);
-	    		addButton.click();
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		// Locate input
-	    		WebElement expInput = wait.until(
-	    		    ExpectedConditions.elementToBeClickable(
-	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')])[2]")
-	    		    )
-	    		);
+				// Additional Images
+				WebElement additionalInput = wait.until(
+						ExpectedConditions.presenceOfElementLocated(By.xpath("(//input[@type='file'])[2]")));
+				((JavascriptExecutor) driver).executeScript(
+						"arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].style.opacity='1';",
+						additionalInput);
+				if (images != null && images.length > 0) {
+					StringBuilder paths = new StringBuilder();
+					for (File f : images) {
+						if (f.isFile() && (f.getName().toLowerCase().endsWith(".jpg")
+								|| f.getName().toLowerCase().endsWith(".jpeg")
+								|| f.getName().toLowerCase().endsWith(".png"))) {
+							paths.append(f.getAbsolutePath()).append("\n");
+						}
+					}
+					if (paths.length() > 0) {
+						additionalInput.sendKeys(paths.toString().trim());
+					}
+				}
 
-	    		
-	    		
-	    		// Type experience includes
-	    		expInput.clear();
-	    		expInput.sendKeys("Hotel pickup, Guide included, Free lunch");
+				Thread.sleep(2000);
 
-	    		
-	    		WebElement addBtn = wait.until(
-	    		    ExpectedConditions.elementToBeClickable(
-	    		        By.xpath("(//input[contains(@class,'flex-1 px-3')]/following-sibling::button)[2]")
-	    		    )
-	    		);
+				driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[2]"))
+						.sendKeys(scenario.mapEmbedUrl);
+				driver.findElement(By.xpath("(//textarea[contains(@class,'w-full px-3')])[3]"))
+						.sendKeys(scenario.directions);
+				driver.findElement(By.name("term_and_conditions")).sendKeys(scenario.termsAndConditions);
+				driver.findElement(By.name("age_policy")).sendKeys(scenario.agePolicy);
+				driver.findElement(By.name("cancellation_policy")).sendKeys(scenario.cancellationPolicy);
+				driver.findElement(By.name("leadTime")).sendKeys(scenario.leadTime);
 
-	    		// Click Add
-	    		addBtn.click();
-	    		
-	    		driver.findElement(By.name("eventDescription")).sendKeys("event description");
-	    		
-	    		driver.findElement(By.xpath("(//label[contains(.,'Event Date *')]/following::input)[1]")).sendKeys("30-01-2026");
-	    		
-	    		driver.findElement(By.xpath("(//label[contains(.,'Start Time *')]/following::input)[1]")).sendKeys("9:00");
-	    		
-	    		driver.findElement(By.xpath("//input[@placeholder='e.g., Teddy Swims Live in Concert']")).sendKeys("Teddy Swims Live in Concert");
-	    		
-	    		driver.findElement(By.name("eventCategory")).sendKeys("Music");
-	    		
-	    		driver.findElement(By.xpath("(//label[normalize-space(text())='Doors Open (HH:mm:ss)']/following::input)[1]")).sendKeys("8:50");
-	    		
-	    		driver.findElement(By.xpath("//input[@placeholder='e.g., 500']")).sendKeys("1000");
-	    		
-	    		
-	    		
-	    		WebElement dateTime = driver.findElement(By.xpath("//input[@name='lastBookingDate']"));
-	    		dateTime.clear();
-	    		dateTime.sendKeys("29-01-2026T15:47");
+				// Metadata
+				WebElement metaInput = wait.until(ExpectedConditions
+						.elementToBeClickable(By.xpath("(//input[contains(@class,'flex-1 px-3')])[1]")));
+				metaInput.sendKeys(scenario.metaData);
+				metaInput.sendKeys(Keys.ENTER);
+				Thread.sleep(500);
 
-	    		
+				// Experience Includes
+				WebElement expInput = wait.until(ExpectedConditions
+						.elementToBeClickable(By.xpath("(//input[contains(@class,'flex-1 px-3')])[2]")));
+				expInput.sendKeys(scenario.experienceIncludes);
+				expInput.sendKeys(Keys.ENTER);
+				Thread.sleep(500);
 
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		driver.findElement(By.xpath("//input[@placeholder='e.g., VIP Gold']")).sendKeys("VIP Gold");
-	    		
-	    		driver.findElement(By.xpath("(//input[@min='0'])[2]")).sendKeys("2000");
-	    		
-	    		driver.findElement(By.xpath("(//input[@min='0'])[3]")).sendKeys("50");
-	    		
-	    		driver.findElement(By.xpath("//textarea[@placeholder='e.g., Premium front row seating with meet & greet access']")).sendKeys("Ticket description");
-	    		
-	    		driver.findElement(By.xpath("//button[normalize-space(text())='Create Recommendation']")).click();
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
+				driver.findElement(By.name("eventDescription")).sendKeys(scenario.eventDescription);
+				driver.findElement(By.xpath("(//label[contains(.,'Event Date *')]/following::input)[1]"))
+						.sendKeys(scenario.eventDate);
+				driver.findElement(By.xpath("(//label[contains(.,'Start Time *')]/following::input)[1]"))
+						.sendKeys(scenario.startTime);
+				driver.findElement(By.xpath("//input[@placeholder='e.g., Teddy Swims Live in Concert']"))
+						.sendKeys(scenario.ticketName);
+				driver.findElement(By.name("eventCategory")).sendKeys(scenario.category);
+				driver.findElement(
+						By.xpath("(//label[normalize-space(text())='Doors Open (HH:mm:ss)']/following::input)[1]"))
+						.sendKeys(scenario.doorsOpen);
+				driver.findElement(By.xpath("//input[@placeholder='e.g., 500']")).sendKeys(scenario.totalCapacity);
+
+				// --- FIX: Last Booking Date & Time ---
+				WebElement dateTimeField = driver.findElement(By.xpath("//input[@name='lastBookingDate']"));
+				dateTimeField.clear();
+				// Robust Method for datetime-local/masked fields in Chrome:
+				// DDMMYYYY -> TAB -> HHmm
+				String rawDigits = scenario.lastBookingDate; // e.g., "290120261547"
+				String datePart = rawDigits.substring(0, 8);
+				String timePart = rawDigits.substring(8);
+
+				System.out.println("Entering Date: " + datePart + " and Time: " + timePart);
+				dateTimeField.sendKeys(datePart);
+				dateTimeField.sendKeys(Keys.TAB);
+				dateTimeField.sendKeys(timePart);
+
+				driver.findElement(By.xpath("//input[@placeholder='e.g., VIP Gold']")).sendKeys(scenario.ticketTier);
+				driver.findElement(By.xpath("(//input[@min='0'])[2]")).sendKeys(scenario.ticketPrice);
+				driver.findElement(By.xpath("(//input[@min='0'])[3]")).sendKeys(scenario.ticketQuantity);
+				driver.findElement(
+						By.xpath("//textarea[@placeholder='e.g., Premium front row seating with meet & greet access']"))
+						.sendKeys(scenario.ticketTierDescription);
+
+				Thread.sleep(3000);
+				WebElement createBtn = wait.until(ExpectedConditions
+						.elementToBeClickable(By.xpath("//button[normalize-space(text())='Create Recommendation']")));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", createBtn);
+				Thread.sleep(1000);
+				createBtn.click();
+
+				// Verification
+				boolean isCreated = false;
+				try {
+					WebElement toast = new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+							ExpectedConditions.visibilityOfElementLocated(
+									By.xpath("//*[contains(text(),'successfully') or contains(text(),'Success')]")));
+					System.out.println("Result: SUCCESS - " + toast.getText());
+					isCreated = true;
+				} catch (Exception e) {
+					System.out.println("Success toast not found, checking if form disappeared...");
+					if (driver.findElements(By.xpath("//button[normalize-space(text())='Create Recommendation']"))
+							.isEmpty()) {
+						isCreated = true;
+					}
+				}
+
+				if (isCreated) {
+					passedCount++;
+					passedScenariosNames.add(scenario.scenarioName);
+				} else {
+					failedCount++;
+					failedScenariosNames.add(scenario.scenarioName);
+				}
+				detailedLogs.add("Scenario: " + scenario.scenarioName + " -> " + (isCreated ? "PASSED" : "FAILED"));
+
+			} catch (Exception e) {
+				System.err.println("Exception in " + scenario.scenarioName + ": " + e.getMessage());
+				failedCount++;
+				failedScenariosNames.add(scenario.scenarioName);
+				detailedLogs.add("Scenario: " + scenario.scenarioName + " -> FAILED (" + e.getMessage() + ")");
+			} finally {
+				driver.quit();
+			}
+		}
+
+		// Final Result Printing
+		System.out.println("\n" + "=".repeat(40));
+		System.out.println("       EVENT TEST SUMMARY");
+		System.out.println("=".repeat(40));
+		System.out.println("Total: " + totalScenarios + " | Passed: " + passedCount + " | Failed: " + failedCount);
+		if (!failedScenariosNames.isEmpty())
+			System.out.println("Failed: " + String.join(", ", failedScenariosNames));
+		System.out.println("=".repeat(40));
+
+		// Logging to file
+		try {
+			File logDir = new File("src/test/resource/logs");
+			if (!logDir.exists())
+				logDir.mkdirs();
+			File logFile = new File(logDir, "event_execution_"
+					+ LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".log");
+			try (PrintWriter pw = new PrintWriter(new FileWriter(logFile))) {
+				pw.println("Event Automation Execution Report");
+				pw.println("Timestamp: " + LocalDateTime.now());
+				pw.println("-".repeat(40));
+				for (String log : detailedLogs)
+					pw.println(log);
+				pw.println("-".repeat(40));
+				pw.println("Summary: " + passedCount + " Passed, " + failedCount + " Failed");
+			}
+			System.out.println("Log created: " + logFile.getAbsolutePath());
+		} catch (Exception e) {
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
