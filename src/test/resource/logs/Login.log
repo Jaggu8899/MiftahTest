@@ -6,11 +6,11 @@ Remote Address: 158.252.156.253:443
 Referrer Policy: no-referrer-when-downgrade
 
 2) Response Headers
-etag: W/"75be-QJRkWONeIXHPU/5Cf7cmCEzwuMs"
+etag: W/"7776-g8RTw67aAaYuBDlWBDjBpyDOV6U"
 access-control-allow-credentials: true
 access-control-allow-origin: https://dev.miftah.ai
-content-length: 30142
-date: Wed, 18 Feb 2026 10:36:11 GMT
+content-length: 30582
+date: Thu, 19 Feb 2026 10:42:26 GMT
 content-type: application/json; charset=utf-8
 x-powered-by: Express
 vary: Origin
@@ -27,7 +27,7 @@ sec-ch-ua-mobile: ?0
 {
   "email": "jagadeeswara89@gmail.com",
   "password": "Jaggu@89",
-  "deviceId": "cb134447-a777-4702-a111-99361ee94b74",
+  "deviceId": "d77bc207-c5ce-478e-ae58-6575099adcb4",
   "deviceName": "Chrome 145 on Windows 10",
   "deviceType": "desktop"
 }
@@ -45,7 +45,7 @@ sec-ch-ua-mobile: ?0
       "isKycVerified": false,
       "status": "active",
       "emailVerifiedAt": "2025-11-07T04:46:38.346Z",
-      "lastLoginAt": "2026-02-18T10:36:10.809Z",
+      "lastLoginAt": "2026-02-19T10:42:26.178Z",
       "roleId": "1",
       "cognitoSub": "62867034-7091-70ad-e18b-8fe8d80e4e59",
       "cognitoUsername": "jagadeeswara89@gmail.com",
@@ -63,7 +63,7 @@ sec-ch-ua-mobile: ?0
         "isPartner": false
       },
       "createdAt": "2025-11-07T04:45:52.245Z",
-      "updatedAt": "2026-02-18T10:36:10.809Z",
+      "updatedAt": "2026-02-19T10:42:26.179Z",
       "role": {
         "id": "1",
         "name": "Super Admin",
@@ -113,34 +113,34 @@ sec-ch-ua-mobile: ?0
           "action": "review"
         },
         {
-          "id": "4216",
+          "id": "5065",
           "resource": "master_users",
-          "action": "review_stylist"
+          "action": "read_admin_chef"
         },
         {
-          "id": "4217",
+          "id": "5066",
           "resource": "master_users",
-          "action": "read_makeup_artist"
+          "action": "review_admin_chef"
         },
         {
-          "id": "4218",
+          "id": "5068",
           "resource": "master_users",
-          "action": "review_consultant"
+          "action": "read_admin_trainer"
         },
         {
-          "id": "4221",
+          "id": "5069",
           "resource": "master_users",
-          "action": "create_gardener"
+          "action": "review_admin_trainer"
         },
         {
-          "id": "4222",
+          "id": "5071",
           "resource": "master_users",
-          "action": "read_own_makeup_artist"
+          "action": "read_admin_tennis_coach"
         },
         {
-          "id": "4224",
+          "id": "5072",
           "resource": "master_users",
-          "action": "read_gardener"
+          "action": "review_admin_tennis_coach"
         },
         {
           "id": "4226",
@@ -148,29 +148,29 @@ sec-ch-ua-mobile: ?0
           "action": "create_admin_tennis_coach"
         },
         {
-          "id": "4227",
+          "id": "5074",
           "resource": "master_users",
-          "action": "read_stylist"
+          "action": "read_admin_therapist"
         },
         {
-          "id": "4229",
+          "id": "5075",
           "resource": "master_users",
-          "action": "read_own_tennis_coach"
+          "action": "review_admin_therapist"
         },
         {
-          "id": "4231",
+          "id": "5077",
           "resource": "master_users",
-          "action": "read_own_gardener"
+          "action": "read_admin_consultant"
         },
         {
-          "id": "4232",
+          "id": "5078",
           "resource": "master_users",
-          "action": "read_chef"
+          "action": "review_admin_consultant"
         },
         {
-          "id": "4234",
+          "id": "5080",
           "resource": "master_users",
-          "action": "review_trainer"
+          "action": "read_admin_gardener"
         },
         {
           "id": "4236",
@@ -178,39 +178,39 @@ sec-ch-ua-mobile: ?0
           "action": "create_admin_trainer"
         },
         {
-          "id": "4237",
+          "id": "5081",
           "resource": "master_users",
-          "action": "create_therapist"
+          "action": "review_admin_gardener"
         },
         {
-          "id": "4239",
+          "id": "5083",
           "resource": "master_users",
-          "action": "read_own_consultant"
+          "action": "read_admin_stylist"
         },
         {
-          "id": "4241",
+          "id": "5084",
           "resource": "master_users",
-          "action": "read_own_trainer"
+          "action": "review_admin_stylist"
         },
         {
-          "id": "4242",
+          "id": "5086",
           "resource": "master_users",
-          "action": "read_own_architect"
+          "action": "read_admin_makeup_artist"
         },
         {
-          "id": "4245",
+          "id": "5087",
           "resource": "master_users",
-          "action": "create_architect"
+          "action": "review_admin_makeup_artist"
         },
         {
-          "id": "4247",
+          "id": "5089",
           "resource": "master_users",
-          "action": "create_chef"
+          "action": "read_admin_architect"
         },
         {
-          "id": "4250",
+          "id": "5090",
           "resource": "master_users",
-          "action": "review_lawyer"
+          "action": "review_admin_architect"
         },
         {
           "id": "4253",
@@ -218,29 +218,19 @@ sec-ch-ua-mobile: ?0
           "action": "create_admin_therapist"
         },
         {
-          "id": "4257",
+          "id": "5092",
           "resource": "master_users",
-          "action": "review_makeup_artist"
+          "action": "read_admin_lawyer"
         },
         {
-          "id": "4259",
+          "id": "5093",
           "resource": "master_users",
-          "action": "create_makeup_artist"
+          "action": "review_admin_lawyer"
         },
         {
           "id": "4261",
           "resource": "master_users",
           "action": "create_admin_stylist"
-        },
-        {
-          "id": "4262",
-          "resource": "master_users",
-          "action": "read_consultant"
-        },
-        {
-          "id": "4264",
-          "resource": "master_users",
-          "action": "read_own_lawyer"
         },
         {
           "id": "4266",
@@ -578,39 +568,9 @@ sec-ch-ua-mobile: ?0
           "action": "read"
         },
         {
-          "id": "4214",
-          "resource": "master_users",
-          "action": "read_own_therapist"
-        },
-        {
           "id": "4219",
           "resource": "master_users",
           "action": "create_admin_chef"
-        },
-        {
-          "id": "4223",
-          "resource": "master_users",
-          "action": "review_gardener"
-        },
-        {
-          "id": "4228",
-          "resource": "master_users",
-          "action": "review_architect"
-        },
-        {
-          "id": "4233",
-          "resource": "master_users",
-          "action": "create_consultant"
-        },
-        {
-          "id": "4238",
-          "resource": "master_users",
-          "action": "create_lawyer"
-        },
-        {
-          "id": "4243",
-          "resource": "master_users",
-          "action": "read_lawyer"
         },
         {
           "id": "4246",
@@ -621,16 +581,6 @@ sec-ch-ua-mobile: ?0
           "id": "4248",
           "resource": "master_users",
           "action": "create_admin_architect"
-        },
-        {
-          "id": "4251",
-          "resource": "master_users",
-          "action": "read_own_stylist"
-        },
-        {
-          "id": "4255",
-          "resource": "master_users",
-          "action": "review_chef"
         },
         {
           "id": "4258",
@@ -953,6 +903,106 @@ sec-ch-ua-mobile: ?0
           "action": "read"
         },
         {
+          "id": "5124",
+          "resource": "master_users",
+          "action": "update_admin_chef"
+        },
+        {
+          "id": "5125",
+          "resource": "master_users",
+          "action": "delete_admin_chef"
+        },
+        {
+          "id": "5126",
+          "resource": "master_users",
+          "action": "update_admin_trainer"
+        },
+        {
+          "id": "5127",
+          "resource": "master_users",
+          "action": "delete_admin_trainer"
+        },
+        {
+          "id": "5128",
+          "resource": "master_users",
+          "action": "update_admin_tennis_coach"
+        },
+        {
+          "id": "5129",
+          "resource": "master_users",
+          "action": "delete_admin_tennis_coach"
+        },
+        {
+          "id": "5130",
+          "resource": "master_users",
+          "action": "update_admin_therapist"
+        },
+        {
+          "id": "5131",
+          "resource": "master_users",
+          "action": "delete_admin_therapist"
+        },
+        {
+          "id": "5132",
+          "resource": "master_users",
+          "action": "update_admin_consultant"
+        },
+        {
+          "id": "5133",
+          "resource": "master_users",
+          "action": "delete_admin_consultant"
+        },
+        {
+          "id": "5134",
+          "resource": "master_users",
+          "action": "update_admin_gardener"
+        },
+        {
+          "id": "5135",
+          "resource": "master_users",
+          "action": "delete_admin_gardener"
+        },
+        {
+          "id": "5136",
+          "resource": "master_users",
+          "action": "update_admin_stylist"
+        },
+        {
+          "id": "5137",
+          "resource": "master_users",
+          "action": "delete_admin_stylist"
+        },
+        {
+          "id": "5138",
+          "resource": "master_users",
+          "action": "update_admin_makeup_artist"
+        },
+        {
+          "id": "5139",
+          "resource": "master_users",
+          "action": "delete_admin_makeup_artist"
+        },
+        {
+          "id": "5140",
+          "resource": "master_users",
+          "action": "update_admin_architect"
+        },
+        {
+          "id": "5141",
+          "resource": "master_users",
+          "action": "delete_admin_architect"
+        },
+        {
+          "id": "5142",
+          "resource": "master_users",
+          "action": "update_admin_lawyer"
+        },
+        {
+          "id": "5143",
+          "resource": "master_users",
+          "action": "delete_admin_lawyer"
+        },
+        {
           "id": "4416",
           "resource": "booking_requests_travel",
           "action": "create_on_behalf"
@@ -1058,36 +1108,6 @@ sec-ch-ua-mobile: ?0
           "action": "update"
         },
         {
-          "id": "4215",
-          "resource": "master_users",
-          "action": "read_architect"
-        },
-        {
-          "id": "4220",
-          "resource": "master_users",
-          "action": "create_stylist"
-        },
-        {
-          "id": "4225",
-          "resource": "master_users",
-          "action": "review_therapist"
-        },
-        {
-          "id": "4230",
-          "resource": "master_users",
-          "action": "read_own_chef"
-        },
-        {
-          "id": "4235",
-          "resource": "master_users",
-          "action": "review_tennis_coach"
-        },
-        {
-          "id": "4240",
-          "resource": "master_users",
-          "action": "create_tennis_coach"
-        },
-        {
           "id": "4244",
           "resource": "master_users",
           "action": "create_admin_consultant"
@@ -1098,29 +1118,9 @@ sec-ch-ua-mobile: ?0
           "action": "read"
         },
         {
-          "id": "4252",
-          "resource": "master_users",
-          "action": "read_tennis_coach"
-        },
-        {
-          "id": "4254",
-          "resource": "master_users",
-          "action": "read_therapist"
-        },
-        {
-          "id": "4256",
-          "resource": "master_users",
-          "action": "create_trainer"
-        },
-        {
           "id": "4260",
           "resource": "master_users",
           "action": "create_admin_makeup_artist"
-        },
-        {
-          "id": "4265",
-          "resource": "master_users",
-          "action": "read_trainer"
         },
         {
           "id": "4271",
@@ -1749,48 +1749,48 @@ sec-ch-ua-mobile: ?0
             "create_admin_tennis_coach",
             "create_admin_therapist",
             "create_admin_trainer",
-            "create_architect",
-            "create_chef",
-            "create_consultant",
-            "create_gardener",
-            "create_lawyer",
-            "create_makeup_artist",
-            "create_stylist",
-            "create_tennis_coach",
-            "create_therapist",
-            "create_trainer",
+            "delete_admin_architect",
+            "delete_admin_chef",
+            "delete_admin_consultant",
+            "delete_admin_gardener",
+            "delete_admin_lawyer",
+            "delete_admin_makeup_artist",
+            "delete_admin_stylist",
+            "delete_admin_tennis_coach",
+            "delete_admin_therapist",
+            "delete_admin_trainer",
             "read",
-            "read_architect",
-            "read_chef",
-            "read_consultant",
-            "read_gardener",
-            "read_lawyer",
-            "read_makeup_artist",
-            "read_own_architect",
-            "read_own_chef",
-            "read_own_consultant",
-            "read_own_gardener",
-            "read_own_lawyer",
-            "read_own_makeup_artist",
-            "read_own_stylist",
-            "read_own_tennis_coach",
-            "read_own_therapist",
-            "read_own_trainer",
-            "read_stylist",
-            "read_tennis_coach",
-            "read_therapist",
-            "read_trainer",
+            "read_admin_architect",
+            "read_admin_chef",
+            "read_admin_consultant",
+            "read_admin_gardener",
+            "read_admin_lawyer",
+            "read_admin_makeup_artist",
+            "read_admin_stylist",
+            "read_admin_tennis_coach",
+            "read_admin_therapist",
+            "read_admin_trainer",
             "review",
-            "review_architect",
-            "review_chef",
-            "review_consultant",
-            "review_gardener",
-            "review_lawyer",
-            "review_makeup_artist",
-            "review_stylist",
-            "review_tennis_coach",
-            "review_therapist",
-            "review_trainer"
+            "review_admin_architect",
+            "review_admin_chef",
+            "review_admin_consultant",
+            "review_admin_gardener",
+            "review_admin_lawyer",
+            "review_admin_makeup_artist",
+            "review_admin_stylist",
+            "review_admin_tennis_coach",
+            "review_admin_therapist",
+            "review_admin_trainer",
+            "update_admin_architect",
+            "update_admin_chef",
+            "update_admin_consultant",
+            "update_admin_gardener",
+            "update_admin_lawyer",
+            "update_admin_makeup_artist",
+            "update_admin_stylist",
+            "update_admin_tennis_coach",
+            "update_admin_therapist",
+            "update_admin_trainer"
           ]
         },
         {
@@ -1920,11 +1920,11 @@ sec-ch-ua-mobile: ?0
         }
       ]
     },
-    "sessionId": "464",
+    "sessionId": "479",
     "cognitoTokens": {
-      "accessToken": "eyJraWQiOiJtXC9pU2Q1UzJUYU5CQ2JZazVuSUd4M2dhdEQ3citBeXEyM1FFWTBxOUVWOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAubWUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL21lLWNlbnRyYWwtMV9JQklMSUNqWnAiLCJjbGllbnRfaWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsIm9yaWdpbl9qdGkiOiI1MDU4MGUwZS1jNjMyLTQyMTctOWY5ZC1kNDg5YzI4MGRkYmEiLCJldmVudF9pZCI6Ijk0ZDg2ZWNhLTQ3MWMtNDc2MC1hZjVlLTUzYzM0ZjdjNjBhZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NzE0MTA5NzEsImV4cCI6MTc3MTQxNDU3MSwiaWF0IjoxNzcxNDEwOTcxLCJqdGkiOiJhOTA3MjhkNi0wMzFiLTQ2YzItODRiMS1jODNhMzg2ZTU2NjkiLCJ1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSJ9.hjWwAW2O257xgZIfypu0YyQz76rYjhu7sYguCPi3ZrNA2NMKGrlg_dwQdbne8iKQkubWEE1jSVMP_kOni8hKiXXb51gOvLoYvUj0IhHMBvY7tdIBiBsko9eFB9CWEknu__xkOVaL1LALQkH63KaYWcx9CDnPLv0ByXQw-BLcl14fxz-Aazz2GJjHOd--7uC35XGKfhVwTxqQEJNSar8QAe_NJyIj_LBEGzq7ViIIw7n0Ta4cyASP64A3oXhPMb4zgU8HEhsqkx5-vs2c39Hwz4yT56MOiwiX0usmIigB7vOsufP4fKwN9Y1Me1503uQLlHR7NfMj9ifU_68KUa-vyw",
-      "idToken": "eyJraWQiOiJYdjZKemNKUW9RTTlJbUtrNmRPVGVwUzRYU01uYlR0b0o2SmVJbkN6bktNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLm1lLWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9tZS1jZW50cmFsLTFfSUJJTElDalpwIiwiY29nbml0bzp1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSIsIm9yaWdpbl9qdGkiOiI1MDU4MGUwZS1jNjMyLTQyMTctOWY5ZC1kNDg5YzI4MGRkYmEiLCJhdWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsImV2ZW50X2lkIjoiOTRkODZlY2EtNDcxYy00NzYwLWFmNWUtNTNjMzRmN2M2MGFkIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3NzE0MTA5NzEsIm5hbWUiOiJqYWdhZGVlc2giLCJwaG9uZV9udW1iZXIiOiIrOTcxNzA5NTI5NzI3NSIsImV4cCI6MTc3MTQxNDU3MSwiaWF0IjoxNzcxNDEwOTcxLCJqdGkiOiJiMWU2NGIwNy1hMGI0LTQxNjgtYTYwYy04YzhhOTZmMGQ2Y2EiLCJlbWFpbCI6ImphZ2FkZWVzd2FyYTg5QGdtYWlsLmNvbSJ9.VoiXkgAVuoYa0mjaeTFvDP_mdDHLAojf0qw3kK93-vUJKy5n39cfHOZUWxN-un0YLuDs8nDNyn1cRKEoaqg2dN2_HcRdoPr4PMaJypAMARjUg2aeTJmk-uA0zG_amDKJ7EYYmBtHcBMEQIm8zgVGB53eHMlRfPi-_HoOcBLekJseB5Atc8I57qW5lFkRa2kf9aXT5kQ6Z9DWc5Fk0xH4LJB9OaMrif4XukARELVif16CjE4REPEUp6XrwTLIqoAoRNds1yM77SHRK77lFVT2cv0Ex0WZkjkOahigAx5C7_rUxmXT8JOV9Jdrp5qVwC_PJewE608e7NKfpb6Oy-uOdQ",
-      "refreshToken": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.uSktLnCBRtOR6IbjibyYOuv6VqxvRHPuafPkOjc4ZQGAJAUCm9BAF9uVNxgLeKtcq1dEUm4llaX_INDu6bLfU-nk9Sacrp1zg-VWoGq3S6ae5bk6TnyV8a-e7zayCr-Z9F4r4_fg4qVqyZBH2JYbUCbXj07Ruh4_hnfl9QRmjPRFjKK0gvKaccNAEVgjshxdohY4Dxr5Xc3qGXjZUGyTS-3Rn_-hsfqIvND0Mao9ZAcq499HW_giplNBF9nJXMsSSSUa3YV6wGiDddQ1GcL79F_jTf2mSIzvT1EeGfmSUOAp00jwcWVfhXIOAQVG4YajMf1HHHY-tpTieMBHlrovhg.Wa31tc4bXD2vH2-F.iFLoyL5OGPAzpDdmsZ803Ya9NptHkrRJYMSla-T3_dVsUvE1rJYxApczDRK-Bb_vMDFlAcvP7hHBMW5kloK4O22ex-6bAjDoOtFsRIIlntjkAAdt_ozprpL_V_--NqCqX7_FTKi0T0fCFz_Wgpdg5X-C8sfkhf7l4T2ZeA_eHsWmtnyrjXhDfDcbclqGqkez4T6KrkL9vZ7GpDUDhHQQyqsjacuLGV2s6bhhLRMmBWBCPEpJY_-68PX9mENutg2yv9GJatQXM88F9DHTUnah-8Stq14likIaa_sNIgH9vfGptZxekUD-1oHF8jJxjTAmzwKuPnXJPBQ6KwYDCq14y-7Ncz-ZCsGKYyJRzhCE2ELkg6Ne_F_fR0zQSIvjDkG5ZuWtQJnvJ-Jmg_UDAlFqUlPeoIw2i4LaQ6pvfSWZD35-ysnT4AS_AhWu4fXkCyEwmY7SZrVazDoFTtcMpE9JAOhpmrUT6rlLioNRh4MBUqAHKqZW10TSMPJdH0BrXAMeqVrbVI7WdPD3aqBf8qjC-4OS4s2G-A5sr22pfDaI0tMZN45qr87zQEeq3YqZVFB1-NeCfWg1SUxX26go8mXmP8xGe03JaaiDvfPzZW3Fp5D924tm7G-xF4JDnWFJn9GoVnEEKxEaz0vM-2Cl2aH_IfNB9FT4R6tPE4vaO_hOvFipHl5UIQk2CP7qKac2gofQnFxCshmIxSzmWD-wJnNRDbkW5o-gJsJyrHnA3ZImZFTJ4r9JSUaTZzVYRn4bPuAqLXKhjlkBTLBhktK-IGLbtTcmBanI-inL9iKSHxOeNq9UoPMZpzNVYiu7v4P5t-d1ipFXHL7mk3JhtbjLIPsXNU-rOx26LEi--oEjGyRA9kdyWpqVcGjnjmvOup55LV-tcAXKsyNjnv1Gtt3RSj20x_zt4lRi1rMQpV8jIkeSS0Nyn3fJb6wjcGvTk7IYc99rVdMFecrEiUZOKLDKFm0zZG1poC2CMB8u_CK1abl5mhu3CWhsf2ZSb_9ata0j8qoyK5koPNWI0W_j0iskaNi2FnjNoZo-kWmm5xnoN83rGwXbXcVkOB6cVMoJx0MOhf4MYtQr0XZiAQsR99WF3PxE0iTn9S46bxEpd8-zUmN8Omt9k3e0TEi1T6P_zUe04HasagmljKSqA5FQWvaFJucQC0BI8rXXMpswxLKfOEwF9z02cB8uuyHapmVGTxqHlpRAdEuA77iw7_FyAU3-hR9rvdB53ek8cHAFkL5wi1b4FjLGlb2jbJJ6vtdBsyiN8xFWL8fROKXa90p44H1WJn169i4FUZLJyFS9ZryxXei-bJogKil5UI-V2KB-HUZrONwjza_m.1Te8LDGZETaFblreRLQCSw",
+      "accessToken": "eyJraWQiOiJtXC9pU2Q1UzJUYU5CQ2JZazVuSUd4M2dhdEQ3citBeXEyM1FFWTBxOUVWOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAubWUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL21lLWNlbnRyYWwtMV9JQklMSUNqWnAiLCJjbGllbnRfaWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsIm9yaWdpbl9qdGkiOiI4NGRiZGY1ZC0zNTc2LTQ2YTgtODJjNi0zM2M0ZmZjMmVhZDIiLCJldmVudF9pZCI6IjlhODI1MzdlLWNmOGEtNDA1Yi04MmE2LWRiNzg1ZDJjZThlMSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NzE0OTc3NDYsImV4cCI6MTc3MTUwMTM0NiwiaWF0IjoxNzcxNDk3NzQ2LCJqdGkiOiI0ZGMwZjU1Zi01ODJlLTQzYzMtOTgxNy00MTdiNzk0ZTFmODIiLCJ1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSJ9.PXP5dIY9P8qhuXDevSqlY__JtjjNHaudrQPbxLnnARX8_B5bUHKS1HJV4Uhto5YEyVPq1qpbW1k3sxIonuUk3XHfTz_qofFUudGMOJM30RNJB2rhzkdEOoRBX72VxYk_mqZ552xo3QfXlBzEkMii1d7OnYvtMPDh20rt9kgBjkTQfhYt_N1EThRFkRgaRrLKxL-5vBfCQbA0-xPaRmQRkhXQ-xn7MNecac4Hpkk1Zb5_3zQnByehyEr_IWdmiiJTBmZoCJFCLpaZ_Y9ATJm66t7L4OlUcDpxxqsUPXXuLvWbhlAgpSZuOzkMU53HdL2XVABgt0eVVAQP1CaKjBND9A",
+      "idToken": "eyJraWQiOiJYdjZKemNKUW9RTTlJbUtrNmRPVGVwUzRYU01uYlR0b0o2SmVJbkN6bktNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2Mjg2NzAzNC03MDkxLTcwYWQtZTE4Yi04ZmU4ZDgwZTRlNTkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLm1lLWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9tZS1jZW50cmFsLTFfSUJJTElDalpwIiwiY29nbml0bzp1c2VybmFtZSI6IjYyODY3MDM0LTcwOTEtNzBhZC1lMThiLThmZThkODBlNGU1OSIsIm9yaWdpbl9qdGkiOiI4NGRiZGY1ZC0zNTc2LTQ2YTgtODJjNi0zM2M0ZmZjMmVhZDIiLCJhdWQiOiIxa2UydWI2cjJ0c3NhbHFsOGx0Y2pxaGl0aiIsImV2ZW50X2lkIjoiOWE4MjUzN2UtY2Y4YS00MDViLTgyYTYtZGI3ODVkMmNlOGUxIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3NzE0OTc3NDYsIm5hbWUiOiJqYWdhZGVlc2giLCJwaG9uZV9udW1iZXIiOiIrOTcxNzA5NTI5NzI3NSIsImV4cCI6MTc3MTUwMTM0NiwiaWF0IjoxNzcxNDk3NzQ2LCJqdGkiOiJkYTY3NWQ5OS04ZjUyLTQ2YTYtOWM2ZS1lYWE4MGQ3MmI3MWMiLCJlbWFpbCI6ImphZ2FkZWVzd2FyYTg5QGdtYWlsLmNvbSJ9.eTYJqAFcr0AysQf1JWNND1fOBe0sbxlwASUTc4iVisIsDZMJDbHFpWN9EXwJVCjo16vhOoDRxrse7UddC81YEehoTxZFWk2J3t9gumYIV-aTesCbIhxm6Qr1k0JYiwvomse71pVv4AAW4A79imZ4HiA_qwUH3ESYRn6AlsoreFcihYDlnun_o0iultBC6pTBzPYPKR1C3zEp_j6XV_3fyd2HXe8Rq-uXkdQW47hSFNCoIAl9n59jUt5-tWggKGXbVrzIJ-obCa4o-B6MMZ2vRPibBAbgMlTU3CUckNieIP_RlZcPNIbkNMZJDBW7BxDmRcdQtv04EFyEtLW-GIaCng",
+      "refreshToken": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.fRVXeYckTePObvx8vk5sh765nFZqUJhidOdO-OMq1wbZisxWibohDQDS-xhQc3Aufgr26OihnFipXldgyQK4yCjrNJvzpKhxoSX5q4-IoP9OUjKsnAsjuBuGSYzOOKTedKsGpyXbouQFnW8Rbh7ROigCtKyvsyUgQki3JJz2iDQEhdWE2AYN5pzdNB3Mqy1HAYt0IYVR9q6x37TXpbOXAUjL1d6ueIerirqNkfA-Oi6J8olTUsQAZc80B0QcwuQgeLl7awB_bVV1pFAZQmn55RnqwCEDcbR5KZ6GAMcsdjuKuDFqnGrk_OSzkid4XMz8trqrBHq84R6c5TxzyTUS2g.voiW9apiYsAOcEtW.v0lzYpPI1ViKHIGdFHCxsv0QV1j8L9luvkyIYxGp9EMibwVjAuDsXGQXU7PyS3RwdPb1IBj6zK7exVcYpPS5GI80WKp1RYeTrdJQWtIBMfcjetQQ2tUZ2l91opv5LvNFNCh1Q9gpDA8zaA7PAIDDMeJQqIRzg8Ymn_NgDpsBnjo0mamWvhlOXvz2PeUqd-4iIujXgthKk02m9KVxymni1ep772r2hJfNaN-8feI279QEeCBbdoSWqijAm18SidMWdF2y9D4p0OQ6_UIpv9w7aNGs7I19_hsC3h-h5cGQJ6aryDuPzE02j9_ISWTuOUAXTgF12EjEtwrlhe0lHcMJcT0Y3y9oCqBA4LCkA7U98A0SbDk7kWS84OSsGnuW_IhEGYUobKQ9eDg5L245ZS9XBAqnBam5ogAXaHWmEZ-ixKk8O2SiCGefWgTJ8O-NVOhSGCIpuodaf66wgwIXbMXbB_afY-VnDt7Ndsi4UwwzkGirly3hC96Hs7t5HhpNPO3KdxuqFXm7Lk5GaYz899zEKPCH-1cMw4ejNkiUTDZrRF--YOYZczCDeyM30SDbXduKC8RCL9BxzJhToru7Y-V4qR_5ZTpiyYMoEzWBDAwE5I2uRUpSasz-jT165_Ynw8zjTW-QKk7SGtxZw5Y-3BNHYVjjgfESo-ZNB5Gu_f4hXJLIQs0qI4qWpZ1R9p9s4wNGkqCtVTbmrt9jpn5PsFL9BGLWo4HTYfKOZitHxX_jjNw2ngjR0xJTmaT5OpTAkYN_eWUyGMYapea3UagEMAHJM2qyF1oT5GXcJYwm3ZlgaXAVlAMKUCxAyuWAlgL-mjlyeovETTyV9Ce2uufmUcLYBDS1a8wdy6J9OXayUTHpVftODpm7qMieKH5mKr4Env_sN9pr_B6UQ8LsQprXLa89qmU6T93JpskcLXl-rxV4y9wN7KB3-iKxsjC2XQBOd2iLotjOaiSQy2jmBdM-QmRPgF7_qwLAbsWqRJMMWeUpz8wBX943vRsaOg2yFyD6SrHmO9_WQ6djs_gT9etndC1XzxqqULx4nE0SMFW0NbJ89fptyzUYnRHZBl5GWf3LJYDmwVMvvYO4GpdauE4QUDuUbg6tDOyKQlxGiQhr1Nj92P1lB6k9UdrtCZgqDQT65xF1G6IU_l5Y8Nr6nAE2gW7NaxeEkwtXF2_mZk2hcIhyhmyx6oZ54B9whl1CuYmCs3YZ0hH9BiYdsw0ikjo5im-H572cHSBYkZAUVsrtQYyHCkskiJmAOQ0DESBowRS1rTWK1FVkEpj_9u5FYzIu6Cu5I3LGkiTVItzukaQALeXzqeTmc365DfPxRsC2XdC64k9j1BHr.PJUv7YQzO_6ZyR6oAHNngA",
       "tokenType": "Bearer",
       "expiresIn": 3600
     }
