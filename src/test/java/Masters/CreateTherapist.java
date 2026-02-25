@@ -1,4 +1,4 @@
-package test13;
+package Masters;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -58,6 +58,10 @@ public class CreateTherapist {
 
             ChromeOptions options = new ChromeOptions();
             options.setCapability("goog:loggingPrefs", Map.of("browser", "ALL"));
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
             ChromeDriver driver = new ChromeDriver(options);
 
             DevTools devTools = driver.getDevTools();
@@ -204,33 +208,43 @@ public class CreateTherapist {
             boolean errorObserved = false;
 
             try {
+                System.out.println("Step 1: Navigating to login page");
                 driver.get("https://crmdev.miftah.ai/login/");
                 driver.manage().window().maximize();
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
                 // 1. Login
+                System.out.println("Step 2: Entering credentials");
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
-                        .sendKeys("masters.therapist@gmail.com");
+                        .sendKeys("therapist8@gmail.com");
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys("Masters@1122");
+
+                System.out.println("Step 3: Clicking Login button");
                 driver.findElement(By.xpath("//button[text()='Login']")).click();
 
                 // 2. Navigation
+                System.out.println("Step 4: Waiting for Sidebar toggle");
+                // Wait for any element that signifies we are logged in
+                WebElement sidebarToggle = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("(//span[contains(@class,'font-medium sidebar-text-transition')])[1]")));
+
+                System.out.println("Step 5: Clicking Sidebar toggle");
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", sidebarToggle);
+
+                System.out.println("Step 6: Clicking Add Master Service");
                 wait.until(ExpectedConditions.elementToBeClickable(
-                        By.xpath("(//span[contains(@class,'font-medium sidebar-text-transition')])[1]"))).click();
-                wait.until(ExpectedConditions
-                        .elementToBeClickable(By.xpath("//button[normalize-space(text())='Add Service Provider']")))
+                        By.xpath("//button[contains(normalize-space(.), 'Add Master Service')]")))
                         .click();
 
                 // Clicking "Therapist" card
-                try {
-                    wait.until(ExpectedConditions
-                            .elementToBeClickable(By.xpath("//h4[normalize-space(text())='Therapist']"))).click();
-                } catch (Exception e) {
-                    wait.until(ExpectedConditions
-                            .elementToBeClickable(By.xpath("(//div[contains(@class,'flex items-start')])[2]"))).click();
-                }
+                System.out.println("Step 7: Selecting Therapist card");
+                wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath(
+                                "//h4[normalize-space(text())='Therapist'] | //div[h4[normalize-space(text())='Therapist']]")))
+                        .click();
 
                 // 3. Form Filling - Hybrid approach (Indices + Labels for safety)
+                System.out.println("Step 8: Filling Basic Info");
 
                 // --- Basic Info ---
                 WebElement nameInput = wait.until(ExpectedConditions
@@ -283,17 +297,22 @@ public class CreateTherapist {
                 fillField(driver, bespokePrice, scenario.bespokePrice);
 
                 // --- Professional Info ---
+                System.out.println("Step 9: Filling Professional Info");
                 WebElement licenseNum = safeFind(driver, wait, "License Number", "input",
                         "(//label[contains(.,'License Number')]/following::input)[1]");
                 fillField(driver, licenseNum, scenario.licenseNumber);
 
-                WebElement therapyMethods = driver
-                        .findElement(By.xpath("//input[@placeholder='Enter therapy methods (comma separated)']"));
+                WebElement therapyMethods = safeFind(driver, wait, "therapy methods", "input",
+                        "//input[@placeholder[contains(.,'therapy methods')]]");
                 fillField(driver, therapyMethods, scenario.therapyMethods + "\n");
 
-                WebElement experience = safeFind(driver, wait, "Experience", "textarea",
+                WebElement yearsExp = safeFind(driver, wait, "Years of Experience", "input",
+                        "(//input[contains(@class,'w-full px-3')])[last()-1]"); // Fallback for numeric input
+                fillField(driver, yearsExp, scenario.yearsOfExperience);
+
+                WebElement expDetails = safeFind(driver, wait, "Experience Details", "textarea",
                         "(//textarea[contains(@class,'w-full px-3')])[2]");
-                fillField(driver, experience, scenario.experience);
+                fillField(driver, expDetails, scenario.experienceDetails);
 
                 WebElement capacity = safeFind(driver, wait, "Capacity", "input", "//input[@min='1']");
                 fillField(driver, capacity, scenario.capacity);
@@ -316,20 +335,31 @@ public class CreateTherapist {
                         By.xpath("//label[contains(text(),'Location Type')]/following::select[1]")));
                 new Select(locSelect).selectByVisibleText(scenario.locationType);
 
+                System.out.println("Step 10: Filling Location and Policy Info");
                 WebElement radiusInput = safeFind(driver, wait, "Service Radius", "input",
                         "(//label[contains(.,'Service Radius')]/following::input)[1]");
                 fillField(driver, radiusInput, scenario.serviceRadius);
 
-                WebElement citiesInput = driver
-                        .findElement(By.xpath("//input[@placeholder='Enter cities (comma separated)']"));
+                WebElement citiesInput = safeFind(driver, wait, "cities", "input",
+                        "//input[@placeholder[contains(.,'cities')]]");
                 fillField(driver, citiesInput, scenario.cities + "\n");
 
-                WebElement cancelPolicy = safeFind(driver, wait, "cancellation policy", "textarea",
-                        "(//textarea[contains(@class,'w-full px-3')])[3]");
+                WebElement cancelPolicy = safeFind(driver, wait, "Policy Name", "input",
+                        "//input[@placeholder[contains(.,'Policy')]]");
                 fillField(driver, cancelPolicy, scenario.cancellationPolicy);
 
-                WebElement termsPolicy = driver
-                        .findElement(By.xpath("//textarea[@placeholder='Enter terms and conditions...']"));
+                // Add a default rule if needed (often required by the UI)
+                try {
+                    WebElement addRuleBtn = driver.findElement(By.xpath("//button[contains(.,'Add Rule')]"));
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addRuleBtn);
+                    addRuleBtn.click();
+                    System.out.println("Step 10.1: Clicked Add Rule button");
+                } catch (Exception e) {
+                    System.out.println("Note: Add Rule button not found or already active");
+                }
+
+                WebElement termsPolicy = safeFind(driver, wait, "terms and conditions", "textarea",
+                        "//textarea[@placeholder[contains(.,'terms and conditions')]]");
                 fillField(driver, termsPolicy, scenario.termsAndConditions);
 
                 // 4. Images

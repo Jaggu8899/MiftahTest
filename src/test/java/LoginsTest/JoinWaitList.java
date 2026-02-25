@@ -1,5 +1,6 @@
-package Test2;
+package LoginsTest;
 
+import calender.BaseTest;
 
 import org.openqa.selenium.By;
 
@@ -23,12 +24,8 @@ public class JoinWaitList extends BaseTest {
 
     public static void main(String[] args) throws Exception {
         JoinWaitList test = new JoinWaitList();
-        test.setUp();          // from BaseTest
+        test.setUp(); // from BaseTest
         test.joinWaitListForm();
-        test.tearDown();       // from BaseTest
+        test.tearDown(); // from BaseTest
     }
 }
-
-
-
-

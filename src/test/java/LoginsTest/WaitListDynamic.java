@@ -1,4 +1,4 @@
-package Test1;
+package LoginsTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,9 @@ public class WaitListDynamic {
 
         // 👤 Test data: multiple users
         String[][] users = {
-            {"Jagadeesh", "jagadeeswara89@gmail.com", "7095297275"},
-            {"kishore", "kishore123@gmail.com", "9876543210"},
-            {"Suresh", "suresh456@gmail.com", "9123456789"}
+                { "Jagadeesh", "jagadeeswara89@gmail.com", "7095297275" },
+                { "kishore", "kishore123@gmail.com", "9876543210" },
+                { "Suresh", "suresh456@gmail.com", "9123456789" }
         };
         for (String[] user : users) {
             String name = user[0];

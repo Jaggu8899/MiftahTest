@@ -1,4 +1,4 @@
-package Test3;
+package LoginsTest;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package Test10;
+package RecommendationCreation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +19,15 @@ public class EventData {
         public String directions;
         public String termsAndConditions;
         public String agePolicy;
-        public String cancellationPolicy;
+        public String policyName;
+        public String[] timeBefores;
+        public String[] timeUnits;
+        public String[] refundPercentages;
         public String leadTime;
         public String metaData;
-        public String experienceIncludes;
+        public String eventIncludes;
+        public String eventName;
+        public String basePrice;
         public String eventDescription;
         public String eventDate; // DD-MM-YYYY
         public String startTime; // HH:mm
@@ -50,10 +55,15 @@ public class EventData {
             this.directions = "";
             this.termsAndConditions = "";
             this.agePolicy = "";
-            this.cancellationPolicy = "";
+            this.policyName = "";
+            this.timeBefores = new String[] {};
+            this.timeUnits = new String[] {};
+            this.refundPercentages = new String[] {};
             this.leadTime = "";
             this.metaData = "";
-            this.experienceIncludes = "";
+            this.eventIncludes = "";
+            this.eventName = "";
+            this.basePrice = "";
             this.eventDescription = "";
             this.eventDate = "";
             this.startTime = "";
@@ -83,10 +93,15 @@ public class EventData {
         s.directions = "Take the Metro to World Trade Centre Station.";
         s.termsAndConditions = "Tickets are non-transferable.";
         s.agePolicy = "18+ for main sessions.";
-        s.cancellationPolicy = "Partial refund up to 30 days before.";
+        s.policyName = "Standard";
+        s.timeBefores = new String[] { "3", "2", "1" };
+        s.timeUnits = new String[] { "Minutes", "Hours", "Days" };
+        s.refundPercentages = new String[] { "20", "40", "100" };
         s.leadTime = "48";
         s.metaData = "tech, dubai, innovation, 2026";
-        s.experienceIncludes = "Networking Lounge, Workshop Access, Lunch Buffet";
+        s.eventIncludes = "Networking Lounge, Workshop Access, Lunch Buffet";
+        s.eventName = "Dubai Tech Summit 2026";
+        s.basePrice = "500";
         s.eventDescription = "A 3-day deep dive into AI and Robotics.";
         s.eventDate = "15-05-2026";
         s.startTime = "09:00";
@@ -94,13 +109,13 @@ public class EventData {
         s.category = "Conference";
         s.doorsOpen = "08:30";
         s.totalCapacity = "500";
-        s.lastBookingDate = "100520261800"; // 10-05-2026 18:00
+        s.lastBookingDate = "2026-05-10T18:00"; // ISO format for datetime-local input
         s.ticketTier = "Early Bird";
         s.ticketPrice = "1200";
         s.ticketQuantity = "500";
         s.ticketTierDescription = "Enjoy early bird discounts on full passes.";
         return s;
-    } 
+    }
 
     private static EventScenario copy(EventScenario base, String newName) {
         EventScenario c = new EventScenario(newName);
@@ -116,10 +131,15 @@ public class EventData {
         c.directions = base.directions;
         c.termsAndConditions = base.termsAndConditions;
         c.agePolicy = base.agePolicy;
-        c.cancellationPolicy = base.cancellationPolicy;
+        c.policyName = base.policyName;
+        c.timeBefores = base.timeBefores;
+        c.timeUnits = base.timeUnits;
+        c.refundPercentages = base.refundPercentages;
         c.leadTime = base.leadTime;
         c.metaData = base.metaData;
-        c.experienceIncludes = base.experienceIncludes;
+        c.eventIncludes = base.eventIncludes;
+        c.eventName = base.eventName;
+        c.basePrice = base.basePrice;
         c.eventDescription = base.eventDescription;
         c.eventDate = base.eventDate;
         c.startTime = base.startTime;

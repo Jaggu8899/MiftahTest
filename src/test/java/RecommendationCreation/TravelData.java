@@ -1,4 +1,4 @@
-package Test10;
+package RecommendationCreation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,20 +22,28 @@ public class TravelData {
         public String checkInTime;
         public String checkOutTime;
         public String tags;
-        public String inclusions;
-        public String roomName;
-        public String roomBasePrice;
-        public String roomMaxOccupancy;
-        public String roomMaxAdults;
-        public String roomMaxChildren;
-        public String roomMaxInfants;
+        public String facilities;
+        public String travelIncludes;
+        // Room Information (matches actual form)
+        public String roomType;
+        public String roomPrice;
+        public String roomMaxGuests;
+        public String roomCount;
+        public String roomSqFtArea;
+        public String roomBeds;
         public String roomView;
         public String roomAmenities;
+        // Additional Information
         public String mapEmbedUrl;
         public String direction;
         public String termsAndConditions;
         public String agePolicy;
-        public String cancellationPolicy;
+        // Cancellation Policy (multiple rules: Minutes, Hours, Days)
+        public String policyName;
+        public String[] timeBefores;
+        public String[] timeUnits;
+        public String[] refundPercentages;
+        // Meta
         public String metaData;
 
         public TravelScenario(String scenarioName) {
@@ -55,20 +63,24 @@ public class TravelData {
             this.checkInTime = "";
             this.checkOutTime = "";
             this.tags = "";
-            this.inclusions = "";
-            this.roomName = "";
-            this.roomBasePrice = "";
-            this.roomMaxOccupancy = "";
-            this.roomMaxAdults = "";
-            this.roomMaxChildren = "";
-            this.roomMaxInfants = "";
+            this.facilities = "";
+            this.travelIncludes = "";
+            this.roomType = "";
+            this.roomPrice = "";
+            this.roomMaxGuests = "";
+            this.roomCount = "";
+            this.roomSqFtArea = "";
+            this.roomBeds = "";
             this.roomView = "";
             this.roomAmenities = "";
             this.mapEmbedUrl = "";
             this.direction = "";
             this.termsAndConditions = "";
             this.agePolicy = "";
-            this.cancellationPolicy = "";
+            this.policyName = "";
+            this.timeBefores = new String[] {};
+            this.timeUnits = new String[] {};
+            this.refundPercentages = new String[] {};
             this.metaData = "";
         }
     }
@@ -90,20 +102,28 @@ public class TravelData {
         s.checkInTime = "11:00";
         s.checkOutTime = "14:00";
         s.tags = "luxury, dubai";
-        s.inclusions = "Breakfast, Wifi";
-        s.roomName = "Sea View Suite";
-        s.roomBasePrice = "500";
-        s.roomMaxOccupancy = "4";
-        s.roomMaxAdults = "2";
-        s.roomMaxChildren = "2";
-        s.roomMaxInfants = "1";
-        s.roomView = "Ocean Front";
-        s.roomAmenities = "Mini Bar, Balcony";
+        s.facilities = "Pool, Gym, Spa";
+        s.travelIncludes = "Breakfast, Airport pickup";
+        // Room Information
+        s.roomType = "Deluxe Room";
+        s.roomPrice = "500";
+        s.roomMaxGuests = "4";
+        s.roomCount = "2";
+        s.roomSqFtArea = "450";
+        s.roomBeds = "2";
+        s.roomView = "Sea view";
+        s.roomAmenities = "Mini Bar, Balcony, WiFi";
+        // Additional Information
         s.mapEmbedUrl = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1107029.2201364434!2d54.568041327437584!3d25.0745656650172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1769755543337!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>";
         s.direction = "Main road.";
         s.termsAndConditions = "ID required.";
         s.agePolicy = "Children free.";
-        s.cancellationPolicy = "72h refund.";
+        // Cancellation Policy (3 rules: Minutes, Hours, Days)
+        s.policyName = "Flexible Travel Policy";
+        s.timeBefores = new String[] { "3", "2", "1" };
+        s.timeUnits = new String[] { "Minutes", "Hours", "Days" };
+        s.refundPercentages = new String[] { "20", "40", "100" };
+        // Meta
         s.metaData = "beachfront, luxury";
         return s;
     }
@@ -125,20 +145,24 @@ public class TravelData {
         c.checkInTime = base.checkInTime;
         c.checkOutTime = base.checkOutTime;
         c.tags = base.tags;
-        c.inclusions = base.inclusions;
-        c.roomName = base.roomName;
-        c.roomBasePrice = base.roomBasePrice;
-        c.roomMaxOccupancy = base.roomMaxOccupancy;
-        c.roomMaxAdults = base.roomMaxAdults;
-        c.roomMaxChildren = base.roomMaxChildren;
-        c.roomMaxInfants = base.roomMaxInfants;
+        c.facilities = base.facilities;
+        c.travelIncludes = base.travelIncludes;
+        c.roomType = base.roomType;
+        c.roomPrice = base.roomPrice;
+        c.roomMaxGuests = base.roomMaxGuests;
+        c.roomCount = base.roomCount;
+        c.roomSqFtArea = base.roomSqFtArea;
+        c.roomBeds = base.roomBeds;
         c.roomView = base.roomView;
         c.roomAmenities = base.roomAmenities;
         c.mapEmbedUrl = base.mapEmbedUrl;
         c.direction = base.direction;
         c.termsAndConditions = base.termsAndConditions;
         c.agePolicy = base.agePolicy;
-        c.cancellationPolicy = base.cancellationPolicy;
+        c.policyName = base.policyName;
+        c.timeBefores = base.timeBefores;
+        c.timeUnits = base.timeUnits;
+        c.refundPercentages = base.refundPercentages;
         c.metaData = base.metaData;
         return c;
     }
